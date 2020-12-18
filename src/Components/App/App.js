@@ -1,14 +1,17 @@
 import {useState} from 'react'
+import StartButton from "../Start/Start";
+import GameFrame from "../GameFrame/GameFrame";
 
 const App = ()=>{
     const [start, setStart] = useState(false)
 
     const startGame = ()=>{
-        console.log('The Game has started', start)
+        console.log('The Game has started')
         setStart(true)
     }
 
-    const render = start ? <div> The Game has Started</div>: <div onClick={startGame}>Start Game</div>
+    const render = start ? <GameFrame/>
+                         : <StartButton startGame={startGame} />
 
     return(
         <main>
