@@ -1,0 +1,8 @@
+@import "~bourbon";
+
+.game-main-section{
+  .game-area{
+    @include size(auto, auto);
+    border: 1px solid black;
+  }
+}
