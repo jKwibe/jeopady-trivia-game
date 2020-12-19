@@ -20,7 +20,7 @@ const GameFrame = ({setQuestion, setAnswer, question, answer, setUserAnswer, use
                     <div className="game-area container-fluid">
                         <section className="row">
                             { roundOneQuestions.map((cat,index)=>{
-                                return <div key={index} className="col-3">
+                                return <div key={index} className="col          ">
                                     <GameRow
                                         category={cat}
                                         setQuestion={setQuestion}
@@ -37,6 +37,7 @@ const GameFrame = ({setQuestion, setAnswer, question, answer, setUserAnswer, use
                 answer={answer}
                 setUserAnswer={setUserAnswer}
                 userAnswer={userAnswer}
+                setQuestion={setQuestion}
             />
         </section>
     )
