@@ -6,12 +6,11 @@ import GameRow from "../GameRow/GameRow";
 
 // css
 import "./GameFrame.scss"
+import QuestionDisplay from "../QuestionDisplay/QuestionDisplay";
 
 
-const GameFrame = ({setQuestion, setAnswer})=>{
+const GameFrame = ({setQuestion, setAnswer, question, answer, setUserAnswer, userAnswer})=>{
     // Import Game Data
-    console.log(roundOneQuestions[0].category);
-    //
     return (
         <section>
             <div>
@@ -21,9 +20,8 @@ const GameFrame = ({setQuestion, setAnswer})=>{
                     <div className="game-area container-fluid">
                         <section className="row">
                             { roundOneQuestions.map((cat,index)=>{
-                                return <div className="col-3">
+                                return <div key={index} className="col-3">
                                     <GameRow
-                                        key={index}
                                         category={cat}
                                         setQuestion={setQuestion}
                                         setAnswer={setAnswer}
@@ -33,6 +31,13 @@ const GameFrame = ({setQuestion, setAnswer})=>{
                         </section>
                     </div>
             </section>
+
+            <QuestionDisplay
+                question={question}
+                answer={answer}
+                setUserAnswer={setUserAnswer}
+                userAnswer={userAnswer}
+            />
         </section>
     )
 }

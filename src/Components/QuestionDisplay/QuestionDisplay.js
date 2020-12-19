@@ -1,10 +1,25 @@
+import {useState} from "react";
 
-const QuestionDisplay = ({ question, answer })=>{
+import QuestionModal from "../QuestionModal/QuestionModal";
+
+const QuestionDisplay = ({ question, answer, setUserAnswer, userAnswer })=>{
+    const [inputText, setInputText] = useState('')
+    const handleSubmit = (event)=>{
+        event.preventDefault();
+        setUserAnswer(inputText)
+        setInputText('')
+
+    }
+
     return(
         <section>
-            {/* Never do this if you do not trust the data sent (Malicious Scripts can break your app)*/}
-            <p dangerouslySetInnerHTML={{__html: question}}></p>
-            <p dangerouslySetInnerHTML={{__html: answer}}></p>
+            <QuestionModal
+                question={question}
+                answer={answer}
+                handleSubmit={handleSubmit}
+                inputText={inputText}
+                setInputText={setInputText}
+            />
         </section>
     )
 }
