@@ -8,7 +8,7 @@ import GameRow from "../GameRow/GameRow";
 import "./GameFrame.scss"
 
 
-const GameFrame = ({setQuestion})=>{
+const GameFrame = ({setQuestion, setAnswer})=>{
     // Import Game Data
     console.log(roundOneQuestions[0].category);
     //
@@ -22,7 +22,12 @@ const GameFrame = ({setQuestion})=>{
                         <section className="row">
                             { roundOneQuestions.map((cat,index)=>{
                                 return <div className="col-3">
-                                    <GameRow key={index} category={cat} setQuestion={setQuestion}/>
+                                    <GameRow
+                                        key={index}
+                                        category={cat}
+                                        setQuestion={setQuestion}
+                                        setAnswer={setAnswer}
+                                    />
                                 </div>
                             })}
                         </section>

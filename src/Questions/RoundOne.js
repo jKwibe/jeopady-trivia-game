@@ -80,7 +80,7 @@ const roundOneQuestions =
             questions: [
                 {
                     question: "During the Mongolian invasions of Japan, what were the Mongol boats mostly stopped by?",
-                    correct_answer: "Typhoons",
+                    answer: "Typhoons",
                 },
                 {
                     question: "How many times was Albert Einstein married in his lifetime?",
