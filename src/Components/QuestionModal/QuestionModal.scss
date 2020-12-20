@@ -1,0 +1,10 @@
+@import "~bourbon";
+
+.question-modal-outer{
+  background: yellowgreen;
+  @include size(60vw, auto);
+  position: relative;
+  left: 50px;
+  border: black 1px solid;
+
+}

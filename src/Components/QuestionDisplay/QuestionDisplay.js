@@ -1,15 +1,17 @@
-import {useState} from "react";
+import { useState} from "react";
 
 import QuestionModal from "../QuestionModal/QuestionModal";
 
-const QuestionDisplay = ({ question, answer, setUserAnswer, setQuestion })=>{
+const QuestionDisplay = ({ question, answer, setUserAnswer, setQuestion, userAnswer, setScore, score, points})=>{
     const [inputText, setInputText] = useState('')
     const handleSubmit = (event)=>{
         event.preventDefault();
         setUserAnswer(inputText)
+        if(userAnswer === answer){
+            setScore(score + points)
+        }
         setInputText('')
         setQuestion('')
-
     }
 
     if(question){
@@ -21,6 +23,7 @@ const QuestionDisplay = ({ question, answer, setUserAnswer, setQuestion })=>{
                     handleSubmit={handleSubmit}
                     inputText={inputText}
                     setInputText={setInputText}
+                    setQuestion={ setQuestion }
                 />
             </section>
         )

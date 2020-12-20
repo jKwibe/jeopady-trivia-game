@@ -1,20 +1,23 @@
 import {Fragment} from "react";
 
-const GameRow = ({category, setQuestion, setAnswer})=>{
+const GameRow = ({category, setQuestion, setAnswer, setPoints, cellActive, setCellActive})=>{
    return(
        <Fragment>
            <section className="row">
                {category.category}
            </section>
            { category.questions.map((question, index)=>{
+               let points = (index+1)*100;
                return <section
                    key={question.question}
                    className="row"
                    onClick={()=> {
                        setQuestion(question.question)
                        setAnswer(question.answer)
+                       setPoints(points)
+
                    }}
-               >{ (index+1)*100}</section>
+               >{ points }</section>
            })}
 
        </Fragment>
