@@ -2,18 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b5ebdd8-0ca9-48a8-bbe7-8e4f0c78ff20" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Components/GameCell/GameCell.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/GameRow/GameRow.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Header/Header.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Header/Header.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/AnswerSubmit/AnswerSubmit.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/AnswerSubmit/AnswerSubmit.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/App/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/App/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/App/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/App/App.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/GameFrame/GameFrame.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/GameFrame/GameFrame.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/GameFrame/GameFrame.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/GameFrame/GameFrame.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/GameRow/GameRow.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/GameRow/GameRow.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/QuestionModal/QuestionModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/QuestionModal/QuestionModal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/SubmitButton/SubmitButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/GameCell/GameCell.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/GameRow/GameRow.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/GameRow/GameRow.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +84,7 @@
       <workItem from="1608402676879" duration="2285000" />
       <workItem from="1608432966517" duration="4476000" />
       <workItem from="1608486305110" duration="397000" />
-      <workItem from="1608549564689" duration="18365000" />
+      <workItem from="1608549564689" duration="20977000" />
     </task>
     <task id="LOCAL-00001" summary="Add Gameframe component.">
       <created>1608334622641</created>
@@ -207,7 +205,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608578523805</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Style the boxes.">
+      <created>1608586426234</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1608586426236</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -243,6 +248,7 @@
     <MESSAGE value="Clean workspace" />
     <MESSAGE value="Disable the button when pressed." />
     <MESSAGE value="Style the modal" />
-    <option name="LAST_COMMIT_MESSAGE" value="Style the modal" />
+    <MESSAGE value="Style the boxes." />
+    <option name="LAST_COMMIT_MESSAGE" value="Style the boxes." />
   </component>
 </project>

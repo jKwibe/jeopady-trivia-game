@@ -1,4 +1,13 @@
 @import "~bourbon";
+
+.row.category{
+  border: 1px solid #6c757d;
+  margin: 10px 1px ;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .row.cell-btn{
   button{
     background: #6c757d;

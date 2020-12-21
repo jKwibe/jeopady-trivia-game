@@ -5,7 +5,7 @@ const GameRow = ({category, setQuestion, setAnswer, setPoints})=>{
    return(
        <>
            <section className="row category">
-               {category.category}
+               <h6><strong>{category.category}</strong></h6>
            </section>
            { category.questions.map((question, index)=>{
                let points = (index+1)*100;

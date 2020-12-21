@@ -4,6 +4,8 @@ import {useState} from 'react'
 import StartButton from "../Start/Start";
 import GameFrame from "../GameFrame/GameFrame";
 
+import "./App.scss"
+
 const App = ()=>{
     const [start, setStart] = useState(false)
 
@@ -17,7 +19,7 @@ const App = ()=>{
                          : <StartButton startGame={startGame} />
 
     return(
-        <main>
+        <main className="main-app">
             { render }
         </main>
 

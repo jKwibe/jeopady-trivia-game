@@ -6,6 +6,7 @@ import GameRow from "../GameRow/GameRow";
 
 // css
 import "./GameFrame.scss"
+import Header from "../Header/Header";
 
 const GameFrame = ()=>{
     const[points, setPoints] = useState(0)
@@ -30,39 +31,42 @@ const GameFrame = ()=>{
     }, [score, points, answer, userAnswer])
 
     return (
-        <section className="main-game-frame">
-            <div>
-                Jeopardy Game Has Started {score}
-            </div>
-            <section className="game-main-section container">
-                    <div className="game-area container-fluid">
-                        <section className="row">
-                            { roundOneQuestions.map((cat,index)=>{
-                                return <div key={index} className="col          ">
-                                    <GameRow
-                                        category={cat}
-                                        setQuestion={setQuestion}
-                                            setAnswer={setAnswer}
-                                            setPoints={setPoints}
-                                    />
-                                </div>
-                            })}
-                        </section>
-                    </div>
+        <>
+            <Header
+            score={score}
+            />
+
+            <section className="main-game-frame">
+                <section className="game-main-section container">
+                        <div className="game-area container-fluid">
+                            <section className="row">
+                                { roundOneQuestions.map((cat,index)=>{
+                                    return <div key={index} className="col          ">
+                                        <GameRow
+                                            category={cat}
+                                            setQuestion={setQuestion}
+                                                setAnswer={setAnswer}
+                                                setPoints={setPoints}
+                                        />
+                                    </div>
+                                })}
+                            </section>
+                        </div>
+                </section>
+
+
+                    <QuestionDisplay
+                        question={question}
+                        answer={answer}
+                        setUserAnswer={setUserAnswer}
+                        userAnswer={userAnswer}
+                        setQuestion={setQuestion}
+                        points={points}
+                        setScore={setScore}
+                        score={score}
+                    />
             </section>
-
-
-                <QuestionDisplay
-                    question={question}
-                    answer={answer}
-                    setUserAnswer={setUserAnswer}
-                    userAnswer={userAnswer}
-                    setQuestion={setQuestion}
-                    points={points}
-                    setScore={setScore}
-                    score={score}
-                />
-        </section>
+        </>
     )
 }
 
