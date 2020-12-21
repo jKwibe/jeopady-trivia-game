@@ -6,35 +6,39 @@ import "./QuestionModal.scss"
 
 
 
-const QuestionModal =({question, answer, handleSubmit, inputText, setInputText, setQuestion})=>{
+const QuestionModal =({question, answer, setUserAnswer, userAnswer, inputText, setInputText, setQuestion})=>{
 
-    const [counter, setCounter] = useState(30);
+    const [timeoutId, setTimeoutId] = useState(0)
+    const [counter, setCounter] = useState(5)
+
+
+    const handleSubmit = (event)=>{
+        event.preventDefault();
+        setUserAnswer(inputText)
+        setInputText('')
+        setQuestion('')
+        clearTimeout(timeoutId)
+    }
 
     useEffect(() => {
-        let unmount = false;
         let timeout;
-        if (counter >= 1 && !unmount ){
+        if (counter >= 1 ){
              timeout = setTimeout(() =>{
-                console.log(Date.now())
-                setCounter(counter - 1)
+                 console.log("still on");
+                 setCounter(counter - 1)
             }, 1000);
         }
 
+        setTimeoutId(timeout)
+
         return ()=> {
             if (counter === 1){
-                unmount = true;
                 clearTimeout(timeout)
                 setQuestion('')
                 setInputText('')
             }
-            console.log("called", unmount);
-            console.log(unmount);
-            console.log(counter);
         }
     }, [counter, setInputText, setQuestion]);
-
-    if(counter <= 0){
-    }
 
     return(
         <section className="question-modal-outer">
@@ -47,9 +51,10 @@ const QuestionModal =({question, answer, handleSubmit, inputText, setInputText, 
                 handleSubmit={handleSubmit}
                 inputText={inputText}
                 setInputText={setInputText}
+                answer={answer}
             />
-            {/*<p>{counter}</p>*/}
-            <ProgressBar striped variant="success" now={counter} max={30} />
+            <p>{counter}</p>
+            <ProgressBar variant="secondary" now={counter} max={30} />
         </section>
     )
 

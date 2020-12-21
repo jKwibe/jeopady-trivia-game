@@ -18,11 +18,6 @@ const GameFrame = ()=>{
     const[answer, setAnswer] = useState('')
     const[userAnswer, setUserAnswer] = useState('')
 
-    // const updateScore = ()=>{
-    //     setScore(score + points)
-    // }
-
-    console.log(score)
 
 
     return (
@@ -53,8 +48,8 @@ const GameFrame = ()=>{
                 setUserAnswer={setUserAnswer}
                 userAnswer={userAnswer}
                 setQuestion={setQuestion}
-                setScore={setScore}
                 points={points}
+                setScore={setScore}
                 score={score}
             />
         </section>
