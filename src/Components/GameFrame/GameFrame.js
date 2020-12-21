@@ -34,7 +34,7 @@ const GameFrame = ()=>{
             <div>
                 Jeopardy Game Has Started {score}
             </div>
-            <section className="game-main-section container-fluid">
+            <section className="game-main-section container">
                     <div className="game-area container-fluid">
                         <section className="row">
                             { roundOneQuestions.map((cat,index)=>{

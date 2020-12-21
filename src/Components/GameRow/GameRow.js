@@ -1,18 +1,19 @@
-import SubmitButton from "../SubmitButton/SubmitButton";
+import GameCell from "../GameCell/GameCell";
 
+import "./GameRow.scss"
 const GameRow = ({category, setQuestion, setAnswer, setPoints})=>{
    return(
        <>
-           <section className="row">
+           <section className="row category">
                {category.category}
            </section>
            { category.questions.map((question, index)=>{
                let points = (index+1)*100;
                return <section
                    key={question.question}
-                   className="row"
+                   className="row cell-btn"
                >
-                   <SubmitButton
+                   <GameCell
                        setQuestion={setQuestion}
                        setAnswer={setAnswer}
                        setPoints={setPoints}

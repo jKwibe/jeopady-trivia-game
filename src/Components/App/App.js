@@ -7,8 +7,6 @@ import GameFrame from "../GameFrame/GameFrame";
 const App = ()=>{
     const [start, setStart] = useState(false)
 
-
-
     const startGame = ()=>{
         console.log('The Game has started')
         setStart(true)

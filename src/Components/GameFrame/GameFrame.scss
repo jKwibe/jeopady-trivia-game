@@ -4,5 +4,6 @@
   .game-area{
     @include size(auto, auto);
     border: 1px solid black;
+    padding: 15px 30px !important;
   }
 }

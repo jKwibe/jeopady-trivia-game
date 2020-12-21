@@ -24,7 +24,7 @@ const QuestionModal =({question, answer, setUserAnswer, inputText, setInputText,
         if (counter >= 1 ){
              timeout = setTimeout(() =>{
                  setCounter(counter - 1)
-            }, 1000);
+            }, 500);
         }
 
         setTimeoutId(timeout)

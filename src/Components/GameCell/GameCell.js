@@ -2,7 +2,7 @@ import {useState} from "react";
 import {Button} from "react-bootstrap";
 
 
-const SubmitButton = ({points, question, setQuestion, setAnswer, setPoints}) => {
+const GameCell = ({points, question, setQuestion, setAnswer, setPoints}) => {
     const [disable, setDisable] = useState(false)
 
     return(
@@ -18,10 +18,10 @@ const SubmitButton = ({points, question, setQuestion, setAnswer, setPoints}) => 
                 disabled={disable}
             >
 
-                { points }
+                <strong className={disable ? "text-cancel": ""}>{ points }</strong>
             </Button>
         </>
     )
 }
 
-export default SubmitButton;
+export default GameCell;

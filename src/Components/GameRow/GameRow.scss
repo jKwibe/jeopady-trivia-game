@@ -1,0 +1,13 @@
+@import "~bourbon";
+.row.cell-btn{
+  button{
+    background: #6c757d;
+    @include size(100%, 100px);
+    width: 100%;
+    margin: 5px;
+    color: white;
+    strong.text-cancel{
+      text-decoration-line: line-through;
+    }
+  }
+}
