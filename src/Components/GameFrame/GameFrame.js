@@ -1,16 +1,13 @@
-import React, { useState} from "react";
+import React, {useEffect, useState} from "react";
 
 import roundOneQuestions from "../../Questions/RoundOne";
-
+import QuestionDisplay from "../QuestionDisplay/QuestionDisplay";
 import GameRow from "../GameRow/GameRow";
 
 // css
 import "./GameFrame.scss"
-import QuestionDisplay from "../QuestionDisplay/QuestionDisplay";
-
 
 const GameFrame = ()=>{
-    // Import Game Data
     const[points, setPoints] = useState(0)
     const[score, setScore] = useState(0)
 
@@ -18,7 +15,19 @@ const GameFrame = ()=>{
     const[answer, setAnswer] = useState('')
     const[userAnswer, setUserAnswer] = useState('')
 
+    useEffect(()=>{
+        if(userAnswer.toLowerCase() === answer.toLowerCase()){
+            console.log("YOUR ANSWER IS CORRECT");
+            setScore(score + points)
+            setUserAnswer('')
+        }
+        if(userAnswer.toLowerCase() !== answer.toLowerCase() && userAnswer !== ''){
+            console.log("YOUR ANSWER IS WRONG");
+            setScore(score - points)
+            setUserAnswer('')
+        }
 
+    }, [score, points, answer, userAnswer])
 
     return (
         <section>
