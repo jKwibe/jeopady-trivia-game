@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b5ebdd8-0ca9-48a8-bbe7-8e4f0c78ff20" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Components/SubmitButton/SubmitButton.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/GameFrame/GameFrame.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/GameFrame/GameFrame.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/GameRow/GameRow.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/GameRow/GameRow.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/QuestionDisplay/QuestionDisplay.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/QuestionDisplay/QuestionDisplay.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/QuestionModal/QuestionModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/QuestionModal/QuestionModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/utils/score.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +81,7 @@
       <workItem from="1608402676879" duration="2285000" />
       <workItem from="1608432966517" duration="4476000" />
       <workItem from="1608486305110" duration="397000" />
-      <workItem from="1608549564689" duration="7551000" />
+      <workItem from="1608549564689" duration="10892000" />
     </task>
     <task id="LOCAL-00001" summary="Add Gameframe component.">
       <created>1608334622641</created>
@@ -172,7 +174,21 @@
       <option name="project" value="LOCAL" />
       <updated>1608554474767</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="ADd logic to calculate score">
+      <created>1608557749372</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1608557749372</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Clean workspace">
+      <created>1608557796917</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1608557796917</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -204,6 +220,8 @@
     <MESSAGE value="The modal disappears after clicking submit." />
     <MESSAGE value="Make the timer to track the user input" />
     <MESSAGE value="Timer and submit working correctly" />
-    <option name="LAST_COMMIT_MESSAGE" value="Timer and submit working correctly" />
+    <MESSAGE value="ADd logic to calculate score" />
+    <MESSAGE value="Clean workspace" />
+    <option name="LAST_COMMIT_MESSAGE" value="Clean workspace" />
   </component>
 </project>

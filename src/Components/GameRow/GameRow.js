@@ -1,8 +1,8 @@
-import {Fragment} from "react";
+import SubmitButton from "../SubmitButton/SubmitButton";
 
-const GameRow = ({category, setQuestion, setAnswer, setPoints, cellActive, setCellActive})=>{
+const GameRow = ({category, setQuestion, setAnswer, setPoints})=>{
    return(
-       <Fragment>
+       <>
            <section className="row">
                {category.category}
            </section>
@@ -11,16 +11,18 @@ const GameRow = ({category, setQuestion, setAnswer, setPoints, cellActive, setCe
                return <section
                    key={question.question}
                    className="row"
-                   onClick={()=> {
-                       setQuestion(question.question)
-                       setAnswer(question.answer)
-                       setPoints(points)
-
-                   }}
-               >{ points }</section>
+               >
+                   <SubmitButton
+                       setQuestion={setQuestion}
+                       setAnswer={setAnswer}
+                       setPoints={setPoints}
+                       points={points}
+                       question={question}
+                   />
+                   </section>
            })}
 
-       </Fragment>
+       </>
    )
 }
 

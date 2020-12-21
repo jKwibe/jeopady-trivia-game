@@ -8,7 +8,7 @@ const QuestionDisplay = ({ question, answer, setUserAnswer, setQuestion, setScor
 
     if(question){
         return(
-            <section className="question-modal">
+            <>
                 <QuestionModal
                     question={question}
                     answer={answer}
@@ -21,7 +21,7 @@ const QuestionDisplay = ({ question, answer, setUserAnswer, setQuestion, setScor
                     userAnswer={userAnswer}
                     points={points}
                 />
-            </section>
+            </>
         )
     }
     return null
