@@ -79,7 +79,7 @@
       <workItem from="1608402676879" duration="2285000" />
       <workItem from="1608432966517" duration="4476000" />
       <workItem from="1608486305110" duration="397000" />
-      <workItem from="1608549564689" duration="4623000" />
+      <workItem from="1608549564689" duration="7551000" />
     </task>
     <task id="LOCAL-00001" summary="Add Gameframe component.">
       <created>1608334622641</created>
@@ -165,7 +165,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608436294034</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Timer and submit working correctly">
+      <created>1608554474767</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1608554474767</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,6 +203,7 @@
     <MESSAGE value="Send the Question modal" />
     <MESSAGE value="The modal disappears after clicking submit." />
     <MESSAGE value="Make the timer to track the user input" />
-    <option name="LAST_COMMIT_MESSAGE" value="Make the timer to track the user input" />
+    <MESSAGE value="Timer and submit working correctly" />
+    <option name="LAST_COMMIT_MESSAGE" value="Timer and submit working correctly" />
   </component>
 </project>

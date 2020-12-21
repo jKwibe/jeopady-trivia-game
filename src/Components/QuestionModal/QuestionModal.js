@@ -6,11 +6,10 @@ import "./QuestionModal.scss"
 
 
 
-const QuestionModal =({question, answer, setUserAnswer, userAnswer, inputText, setInputText, setQuestion})=>{
+const QuestionModal =({question, answer, setUserAnswer, inputText, setInputText, setQuestion})=>{
 
     const [timeoutId, setTimeoutId] = useState(0)
-    const [counter, setCounter] = useState(5)
-
+    const [counter, setCounter] = useState(30)
 
     const handleSubmit = (event)=>{
         event.preventDefault();
@@ -24,7 +23,6 @@ const QuestionModal =({question, answer, setUserAnswer, userAnswer, inputText, s
         let timeout;
         if (counter >= 1 ){
              timeout = setTimeout(() =>{
-                 console.log("still on");
                  setCounter(counter - 1)
             }, 1000);
         }
