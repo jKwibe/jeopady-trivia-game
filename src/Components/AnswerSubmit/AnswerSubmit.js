@@ -1,19 +1,29 @@
-import {Fragment} from "react";
+import {Form, Button} from "react-bootstrap";
+
+import "./AnswerSubmit.scss"
 
 const AnswerSubmit = ({handleSubmit, inputText, setInputText})=>{
     return(
-        <Fragment>
-            <form onSubmit={handleSubmit}>
-                <label>Enter Your Answer</label>
-                <input
-                    type="text"
-                    value={inputText}
-                    onChange={e => setInputText(e.target.value)}
-                />
-                <br/>
-                <input type="submit" value="submit" disabled={inputText.length <= 0}/>
-            </form>
-        </Fragment>
+        <>
+            <Form onSubmit={handleSubmit}>
+                <Form.Group controlId="formBasicEmail">
+                    <Form.Label>Enter Your Answer</Form.Label>
+                    <Form.Control
+                        type="text"
+                        placeholder="Enter an answer"
+                        value={inputText}
+                        onChange={e => setInputText(e.target.value)}
+                    />
+                </Form.Group>
+                <Button
+                    variant="outline-secondary"
+                    type="submit"
+                    disabled={inputText.length <= 0}
+                >
+                    Answer
+                </Button>
+            </Form>
+        </>
     )
 }
 

@@ -1,0 +1,12 @@
+@import "~bourbon";
+
+form{
+  .form-group{
+    input[type=text]{
+      border-radius: 0 !important;
+    }
+  }
+  button[type=submit]{
+    border-radius: 0 !important;
+  }
+}

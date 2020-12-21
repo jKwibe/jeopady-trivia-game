@@ -2,13 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b5ebdd8-0ca9-48a8-bbe7-8e4f0c78ff20" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Components/SubmitButton/SubmitButton.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/AnswerSubmit/AnswerSubmit.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/QuestionDisplay/QuestionDisplay.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/GameRow/GameRow.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/GameRow/GameRow.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/AnswerSubmit/AnswerSubmit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/AnswerSubmit/AnswerSubmit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/GameFrame/GameFrame.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/GameFrame/GameFrame.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/QuestionDisplay/QuestionDisplay.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/QuestionDisplay/QuestionDisplay.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/QuestionModal/QuestionModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/QuestionModal/QuestionModal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/utils/score.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +82,7 @@
       <workItem from="1608402676879" duration="2285000" />
       <workItem from="1608432966517" duration="4476000" />
       <workItem from="1608486305110" duration="397000" />
-      <workItem from="1608549564689" duration="10892000" />
+      <workItem from="1608549564689" duration="15402000" />
     </task>
     <task id="LOCAL-00001" summary="Add Gameframe component.">
       <created>1608334622641</created>
@@ -188,7 +189,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608557796917</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Disable the button when pressed.">
+      <created>1608571771786</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1608571771787</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -222,6 +230,7 @@
     <MESSAGE value="Timer and submit working correctly" />
     <MESSAGE value="ADd logic to calculate score" />
     <MESSAGE value="Clean workspace" />
-    <option name="LAST_COMMIT_MESSAGE" value="Clean workspace" />
+    <MESSAGE value="Disable the button when pressed." />
+    <option name="LAST_COMMIT_MESSAGE" value="Disable the button when pressed." />
   </component>
 </project>

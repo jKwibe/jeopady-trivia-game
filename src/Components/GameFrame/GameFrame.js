@@ -30,7 +30,7 @@ const GameFrame = ()=>{
     }, [score, points, answer, userAnswer])
 
     return (
-        <section>
+        <section className="main-game-frame">
             <div>
                 Jeopardy Game Has Started {score}
             </div>
@@ -51,16 +51,17 @@ const GameFrame = ()=>{
                     </div>
             </section>
 
-            <QuestionDisplay
-                question={question}
-                answer={answer}
-                setUserAnswer={setUserAnswer}
-                userAnswer={userAnswer}
-                setQuestion={setQuestion}
-                points={points}
-                setScore={setScore}
-                score={score}
-            />
+
+                <QuestionDisplay
+                    question={question}
+                    answer={answer}
+                    setUserAnswer={setUserAnswer}
+                    userAnswer={userAnswer}
+                    setQuestion={setQuestion}
+                    points={points}
+                    setScore={setScore}
+                    score={score}
+                />
         </section>
     )
 }

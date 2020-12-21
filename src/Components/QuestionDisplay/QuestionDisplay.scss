@@ -1,0 +1,25 @@
+@import "~bourbon";
+
+.question-display{
+  background: rgba(0,0,0, .7);
+  @include size(100vw, 100vh);
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .question-modal{
+    background: white;
+    @include size(500px, auto);
+    position: absolute;
+    justify-items: center;
+    padding: 25px;
+    .progress{
+      margin: 20px 0;
+      height: 20px;
+      border-radius: 0;
+    }
+  }
+}

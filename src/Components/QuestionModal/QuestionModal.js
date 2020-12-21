@@ -1,5 +1,5 @@
 import AnswerSubmit from "../AnswerSubmit/AnswerSubmit";
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import {ProgressBar} from 'react-bootstrap'
 
 import "./QuestionModal.scss"
@@ -39,11 +39,12 @@ const QuestionModal =({question, answer, setUserAnswer, inputText, setInputText,
     }, [counter, setInputText, setQuestion]);
 
     return(
-        <>
+        <section className="question-modal">
 
             <section>
-                <p dangerouslySetInnerHTML={{__html: question}}></p>
-                <p dangerouslySetInnerHTML={{__html: answer}}></p>
+                <strong><p dangerouslySetInnerHTML={{__html: question}}></p></strong>
+                {/*<p dangerouslySetInnerHTML={{__html: answer}}></p>*/}
+                <hr/>
 
             </section>
             <AnswerSubmit
@@ -52,9 +53,8 @@ const QuestionModal =({question, answer, setUserAnswer, inputText, setInputText,
                 setInputText={setInputText}
                 answer={answer}
             />
-            <p>{counter}</p>
             <ProgressBar variant="secondary" now={counter} max={30} />
-        </>
+        </section>
     )
 
 }
