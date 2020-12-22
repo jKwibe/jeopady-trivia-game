@@ -7,6 +7,7 @@ import GameRow from "../GameRow/GameRow";
 // css
 import "./GameFrame.scss"
 import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
 
 const GameFrame = ()=>{
     const[points, setPoints] = useState(0)
@@ -66,6 +67,7 @@ const GameFrame = ()=>{
                         score={score}
                     />
             </section>
+            <Footer/>
         </>
     )
 }
