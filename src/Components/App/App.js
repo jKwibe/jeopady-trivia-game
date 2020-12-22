@@ -19,7 +19,10 @@ const App = ()=>{
                          : <StartButton startGame={startGame} />
 
     return(
-        <main className="main-app">
+        <main
+            className={`main-app ${ start? '': 'initial-bg'} `}
+            style={start?null:{backgroundImage: `url('${process.env.PUBLIC_URL}/Jeopardy-logo.jpg')`, backgroundSize: "cover"}}
+        >
             { render }
         </main>
 

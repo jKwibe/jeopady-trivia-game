@@ -1,7 +1,7 @@
 
 const StartButton = ({startGame})=>{
 
-    return <div onClick={startGame}>Start Game</div>
+    return <div className='btn start-btn' onClick={startGame}>Start Game</div>
 }
 
 export default StartButton;

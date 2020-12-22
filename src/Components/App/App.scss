@@ -1,4 +1,17 @@
+@import "~bourbon";
+
 .main-app{
   background: #021e44;
   font-family: 'Overpass Mono', monospace;
+  @include size(100vw, 100vh);
+  .start-btn{
+    background-color: #cccccc;
+    @include size(200px, 60px);
+    border-radius: 0 !important;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    margin-top: -30px;
+    margin-left: -100px;
+  }
 }
