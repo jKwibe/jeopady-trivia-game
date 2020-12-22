@@ -16,7 +16,6 @@ const AnswerSubmit = ({handleSubmit, inputText, setInputText})=>{
                     />
                 </Form.Group>
                 <Button
-                    variant="outline-secondary"
                     type="submit"
                     disabled={inputText.length <= 0}
                 >

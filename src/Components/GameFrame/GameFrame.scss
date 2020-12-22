@@ -3,7 +3,6 @@
 .game-main-section{
   padding: 50px 0;
   .game-area{
-    @include size(auto, auto);
     background: #ccc;
     border-radius: 5px;
     border: 1px solid #6c757d;

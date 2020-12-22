@@ -38,7 +38,7 @@ const GameFrame = ()=>{
 
             <section className="main-game-frame">
                 <section className="game-main-section container">
-                        <div className="game-area container-fluid">
+                        <div className="game-area">
                             <section className="row">
                                 { roundOneQuestions.map((cat,index)=>{
                                     return <div key={index} className="col          ">

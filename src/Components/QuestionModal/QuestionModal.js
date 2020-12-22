@@ -53,7 +53,7 @@ const QuestionModal =({question, answer, setUserAnswer, inputText, setInputText,
                 setInputText={setInputText}
                 answer={answer}
             />
-            <ProgressBar variant="secondary" now={counter} max={30} />
+            <ProgressBar className="time-conter" now={counter} max={30} />
         </section>
     )
 

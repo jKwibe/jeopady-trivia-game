@@ -1,7 +1,7 @@
 @import "~bourbon";
 
 .question-display{
-  background: rgba(0,0,0, .7);
+  background: transparentize(#021e44, .3);
   @include size(100vw, 100vh);
   position: absolute;
   z-index: 100;
@@ -11,7 +11,7 @@
   justify-content: center;
 
   .question-modal{
-    background: white;
+    background: #cccccc;
     @include size(500px, auto);
     position: absolute;
     justify-items: center;
@@ -20,6 +20,10 @@
       margin: 20px 0;
       height: 20px;
       border-radius: 0;
+      background-color: transparentize(#021e44, .5);
+      .progress-bar{
+        background-color: #021e44;
+      }
     }
   }
 }

@@ -4,6 +4,21 @@ form{
   .form-group{
     input[type=text]{
       border-radius: 0 !important;
+      border: 1px solid #021e44;
+      font-family: 'Overpass Mono', monospace;
+      background-color: #cccccc;
+    }
+  }
+  button[type=submit]{
+    border: #021e44 1px solid;
+    background-color: transparentize(#021e44, .1);
+    &:hover{
+      background-color: #021e44 !important;
+      border: #021e44 1px solid;
+    }
+    &:disabled{
+      border: 1px solid #021e44;
+      background-color: transparentize(#021e44, .1);
     }
   }
 }
