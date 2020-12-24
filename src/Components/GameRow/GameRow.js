@@ -1,7 +1,7 @@
 import GameCell from "../GameCell/GameCell";
 
 import "./GameRow.scss"
-const GameRow = ({category, setQuestion, setAnswer, setPoints})=>{
+const GameRow = ({category, setQuestion, setAnswer, setPoints, setQandA})=>{
    return(
        <>
            <section className="row category">
@@ -14,8 +14,9 @@ const GameRow = ({category, setQuestion, setAnswer, setPoints})=>{
                    className="row cell-btn"
                >
                    <GameCell
-                       setQuestion={setQuestion}
-                       setAnswer={setAnswer}
+                       setQandA={setQandA}
+                       // setQuestion={setQuestion}
+                       // setAnswer={setAnswer}
                        setPoints={setPoints}
                        points={points}
                        question={question}
