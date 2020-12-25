@@ -6,7 +6,7 @@ import "./QuestionModal.scss"
 
 
 
-const QuestionModal =({question, answer, setUserAnswer, inputText, setInputText, setQuestion})=>{
+const QuestionModal =({setUserAnswer, inputText, setInputText, setQandA, QandA})=>{
 
     const [timeoutId, setTimeoutId] = useState(0)
     const [counter, setCounter] = useState(30)
@@ -15,7 +15,7 @@ const QuestionModal =({question, answer, setUserAnswer, inputText, setInputText,
         event.preventDefault();
         setUserAnswer(inputText)
         setInputText('')
-        setQuestion('')
+        setQandA({question: '', answer: QandA.answer})
         clearTimeout(timeoutId)
     }
 
@@ -32,18 +32,17 @@ const QuestionModal =({question, answer, setUserAnswer, inputText, setInputText,
         return ()=> {
             if (counter === 1){
                 clearTimeout(timeout)
-                setQuestion('')
+                setQandA({question: '', answer: QandA.answer})
                 setInputText('')
             }
         }
-    }, [counter, setInputText, setQuestion]);
+    }, [counter, setInputText, setQandA, QandA]);
 
     return(
         <section className="question-modal">
 
             <section>
-                <strong><p dangerouslySetInnerHTML={{__html: question}}></p></strong>
-                {/*<p dangerouslySetInnerHTML={{__html: answer}}></p>*/}
+                <strong><p dangerouslySetInnerHTML={{__html: QandA.question}}></p></strong>
                 <hr/>
 
             </section>
@@ -51,9 +50,8 @@ const QuestionModal =({question, answer, setUserAnswer, inputText, setInputText,
                 handleSubmit={handleSubmit}
                 inputText={inputText}
                 setInputText={setInputText}
-                answer={answer}
             />
-            <ProgressBar className="time-conter" now={counter} max={30} />
+            <ProgressBar className="time-counter" now={counter} max={30} />
         </section>
     )
 

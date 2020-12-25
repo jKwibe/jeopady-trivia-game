@@ -6,34 +6,37 @@ import GameRow from "../GameRow/GameRow";
 
 // css
 import "./GameFrame.scss"
+
+// import components
 import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
 
 const GameFrame = ()=>{
     const[points, setPoints] = useState(0)
     const[score, setScore] = useState(0)
-
-    const[question, setQuestion] = useState('')
-    const[answer, setAnswer] = useState('')
+    const[QandA, setQandA] = useState({question: '', answer: ''})
     const[userAnswer, setUserAnswer] = useState('')
 
+    console.log(QandA)
+
     useEffect(()=>{
-        if(userAnswer.toLowerCase() === answer.toLowerCase()){
+        if(userAnswer.toLowerCase() === QandA.answer.toLowerCase()){
             console.log("YOUR ANSWER IS CORRECT");
             setScore(score + points)
             setUserAnswer('')
         }
-        if(userAnswer.toLowerCase() !== answer.toLowerCase() && userAnswer !== ''){
+        if(userAnswer.toLowerCase() !== QandA.answer.toLowerCase() && userAnswer !== ''){
             console.log("YOUR ANSWER IS WRONG");
             setScore(score - points)
             setUserAnswer('')
         }
 
-    }, [score, points, answer, userAnswer])
+    }, [score, points, QandA.answer, userAnswer])
 
     return (
         <>
             <Header
-            score={score}
+                score={score}
             />
 
             <section className="main-game-frame">
@@ -44,9 +47,8 @@ const GameFrame = ()=>{
                                     return <div key={index} className="col          ">
                                         <GameRow
                                             category={cat}
-                                            setQuestion={setQuestion}
-                                                setAnswer={setAnswer}
-                                                setPoints={setPoints}
+                                            setQandA={setQandA}
+                                            setPoints={setPoints}
                                         />
                                     </div>
                                 })}
@@ -56,16 +58,12 @@ const GameFrame = ()=>{
 
 
                     <QuestionDisplay
-                        question={question}
-                        answer={answer}
+                        QandA={QandA}
+                        setQandA={setQandA}
                         setUserAnswer={setUserAnswer}
-                        userAnswer={userAnswer}
-                        setQuestion={setQuestion}
-                        points={points}
-                        setScore={setScore}
-                        score={score}
                     />
             </section>
+            <Footer/>
         </>
     )
 }
