@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b5ebdd8-0ca9-48a8-bbe7-8e4f0c78ff20" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Components/GameArea/GameArea.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/GameCell/GameCell.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/GameCell/GameCell.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/GameFrame/GameFrame.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/GameFrame/GameFrame.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/GameRow/GameRow.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/GameRow/GameRow.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/QuestionDisplay/QuestionDisplay.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/QuestionDisplay/QuestionDisplay.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/QuestionModal/QuestionModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/QuestionModal/QuestionModal.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,12 +38,16 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
-                    <option name="branchName" value="fix-state" />
-                    <option name="lastUsedInstant" value="1608844122" />
+                    <option name="branchName" value="second-round-2" />
+                    <option name="lastUsedInstant" value="1609033481" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="main" />
-                    <option name="lastUsedInstant" value="1608599662" />
+                    <option name="lastUsedInstant" value="1609033430" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="fix-state" />
+                    <option name="lastUsedInstant" value="1608844122" />
                   </RecentBranch>
                 </list>
               </option>

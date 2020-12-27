@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 
 import roundOneQuestions from "../../Questions/RoundOne";
 import QuestionDisplay from "../QuestionDisplay/QuestionDisplay";
-import GameRow from "../GameRow/GameRow";
+// import GameRow from "../GameRow/GameRow";
 
 // css
 import "./GameFrame.scss"
@@ -10,10 +10,12 @@ import "./GameFrame.scss"
 // import components
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
+import GameArea from "../GameArea/GameArea";
 
 const GameFrame = ()=>{
     const[points, setPoints] = useState(0)
     const[score, setScore] = useState(0)
+    const[Question, setQuestion] = useState(roundOneQuestions)
     const[QandA, setQandA] = useState({question: '', answer: ''})
     const[userAnswer, setUserAnswer] = useState('')
 
@@ -40,28 +42,18 @@ const GameFrame = ()=>{
             />
 
             <section className="main-game-frame">
-                <section className="game-main-section container">
-                        <div className="game-area">
-                            <section className="row">
-                                { roundOneQuestions.map((cat,index)=>{
-                                    return <div key={index} className="col          ">
-                                        <GameRow
-                                            category={cat}
-                                            setQandA={setQandA}
-                                            setPoints={setPoints}
-                                        />
-                                    </div>
-                                })}
-                            </section>
-                        </div>
-                </section>
+                <GameArea
+                    setQandA={setQandA}
+                    setPoints={setPoints}
+                    Questions={Question}
+                    setQuestion={setQuestion}
+                />
 
-
-                    <QuestionDisplay
-                        QandA={QandA}
-                        setQandA={setQandA}
-                        setUserAnswer={setUserAnswer}
-                    />
+                <QuestionDisplay
+                    QandA={QandA}
+                    setQandA={setQandA}
+                    setUserAnswer={setUserAnswer}
+                />
             </section>
             <Footer/>
         </>
