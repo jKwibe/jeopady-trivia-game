@@ -1,8 +1,6 @@
 import React, {useEffect, useState} from "react";
 
-import roundOneQuestions from "../../Questions/RoundOne";
 import QuestionDisplay from "../QuestionDisplay/QuestionDisplay";
-import GameRow from "../GameRow/GameRow";
 
 // css
 import "./GameFrame.scss"
@@ -10,28 +8,43 @@ import "./GameFrame.scss"
 // import components
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
+import GameArea from "../GameArea/GameArea";
 
-const GameFrame = ()=>{
-    const[points, setPoints] = useState(0)
-    const[score, setScore] = useState(0)
-    const[QandA, setQandA] = useState({question: '', answer: ''})
-    const[userAnswer, setUserAnswer] = useState('')
+import roundOneQuestions from "../../Questions/RoundOne";
+import roundTwoQuestions from "../../Questions/RoundTwo";
 
+const GameFrame = ({ score, setPoints, QandA, round, setQandA, setRound, setUserAnswer,questionList, setQuestionList})=> {
     console.log(QandA)
+    const [isDone, setIsDone] = useState(false)
+    const [showModal, setShowModal] = useState(false)
 
     useEffect(()=>{
-        if(userAnswer.toLowerCase() === QandA.answer.toLowerCase()){
-            console.log("YOUR ANSWER IS CORRECT");
-            setScore(score + points)
-            setUserAnswer('')
-        }
-        if(userAnswer.toLowerCase() !== QandA.answer.toLowerCase() && userAnswer !== ''){
-            console.log("YOUR ANSWER IS WRONG");
-            setScore(score - points)
-            setUserAnswer('')
-        }
+        let buttons = document.querySelectorAll('.row.cell-btn')
+        let buttonArray = [...buttons]
+        let isAllDisabled = buttonArray.every( (button) => {
+            return button.children[0].disabled
+        })
+        setIsDone(isAllDisabled);
+        // eslint-disable-next-line
+    }, [QandA])
 
-    }, [score, points, QandA.answer, userAnswer])
+    console.log(`The round is => ${round}`)
+    console.log(isDone);
+
+    useEffect(()=>{
+        switch (round) {
+            case 1:
+                console.log('run in');
+                setQuestionList(roundOneQuestions)
+                break;
+            case 2:
+                setQuestionList(roundTwoQuestions)
+                break;
+            default:
+                setQuestionList({})
+        }
+        // eslint-disable-next-line
+    }, [round, questionList])
 
     return (
         <>
@@ -40,28 +53,26 @@ const GameFrame = ()=>{
             />
 
             <section className="main-game-frame">
-                <section className="game-main-section container">
-                        <div className="game-area">
-                            <section className="row">
-                                { roundOneQuestions.map((cat,index)=>{
-                                    return <div key={index} className="col          ">
-                                        <GameRow
-                                            category={cat}
-                                            setQandA={setQandA}
-                                            setPoints={setPoints}
-                                        />
-                                    </div>
-                                })}
-                            </section>
-                        </div>
-                </section>
+                <GameArea
+                    setQandA={setQandA}
+                    setPoints={setPoints}
+                    Questions={questionList}
+                    setRound={setRound}
+                    round={round}
+                    setShowModal={setShowModal}
+                />
 
-
-                    <QuestionDisplay
-                        QandA={QandA}
-                        setQandA={setQandA}
-                        setUserAnswer={setUserAnswer}
-                    />
+                <QuestionDisplay
+                    QandA={QandA}
+                    setQandA={setQandA}
+                    setUserAnswer={setUserAnswer}
+                    isDone={isDone}
+                    setIsDone={setIsDone}
+                    setRound={setRound}
+                    round={round}
+                    showModal={showModal}
+                    setShowModal={setShowModal}
+                />
             </section>
             <Footer/>
         </>

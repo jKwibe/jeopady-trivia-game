@@ -4,10 +4,10 @@ import QuestionModal from "../QuestionModal/QuestionModal";
 
 import "./QuestionDisplay.scss"
 
-const QuestionDisplay = ({ setUserAnswer, QandA, setQandA})=>{
+const QuestionDisplay = ({ setUserAnswer, QandA, setQandA, isDone, setIsDone, round, setRound, showModal, setShowModal})=>{
     const [inputText, setInputText] = useState('')
 
-    if(QandA.question){
+    if(showModal){
         return(
             <section className="question-display">
                 <QuestionModal
@@ -16,6 +16,12 @@ const QuestionDisplay = ({ setUserAnswer, QandA, setQandA})=>{
                     setUserAnswer={setUserAnswer}
                     inputText={inputText}
                     setInputText={setInputText}
+                    isDone={isDone}
+                    setIsDone={setIsDone}
+                    setRound={setRound}
+                    round={round}
+                    showModal={showModal}
+                    setShowModal={setShowModal}
                 />
             </section>
         )
