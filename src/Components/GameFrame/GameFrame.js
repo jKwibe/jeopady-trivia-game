@@ -14,9 +14,19 @@ import roundOneQuestions from "../../Questions/RoundOne";
 import roundTwoQuestions from "../../Questions/RoundTwo";
 
 const GameFrame = ({ score, setPoints, QandA, round, setQandA, setRound, setUserAnswer,questionList, setQuestionList})=> {
-    console.log(QandA)
     const [isDone, setIsDone] = useState(false)
     const [showModal, setShowModal] = useState(false)
+    const [isNextRound, setIsNextRound] = useState(false)
+
+    console.log(isDone, isNextRound);
+
+    useEffect(()=>{
+        if(isDone && isNextRound){
+            setRound(round + 1)
+            setIsDone(false)
+        }
+        // eslint-disable-next-line
+    }, [isNextRound, isDone])
 
     useEffect(()=>{
         let buttons = document.querySelectorAll('.row.cell-btn')
@@ -28,23 +38,19 @@ const GameFrame = ({ score, setPoints, QandA, round, setQandA, setRound, setUser
         // eslint-disable-next-line
     }, [QandA])
 
-    console.log(`The round is => ${round}`)
-    console.log(isDone);
-
     useEffect(()=>{
         switch (round) {
             case 1:
-                console.log('run in');
                 setQuestionList(roundOneQuestions)
                 break;
             case 2:
                 setQuestionList(roundTwoQuestions)
                 break;
             default:
-                setQuestionList({})
+                setQuestionList([])
         }
         // eslint-disable-next-line
-    }, [round, questionList])
+    }, [round])
 
     return (
         <>
@@ -53,6 +59,7 @@ const GameFrame = ({ score, setPoints, QandA, round, setQandA, setRound, setUser
             />
 
             <section className="main-game-frame">
+                {questionList.length > 0 &&
                 <GameArea
                     setQandA={setQandA}
                     setPoints={setPoints}
@@ -60,7 +67,12 @@ const GameFrame = ({ score, setPoints, QandA, round, setQandA, setRound, setUser
                     setRound={setRound}
                     round={round}
                     setShowModal={setShowModal}
-                />
+                />}
+                {questionList.length === 0 &&
+                <div align='center' style={{color: 'white'}}>
+                    <h1>THANKS FOR PLAYING!!!</h1>
+                    <h2>Your Score is {score}</h2>
+                </div>}
 
                 <QuestionDisplay
                     QandA={QandA}
@@ -72,6 +84,8 @@ const GameFrame = ({ score, setPoints, QandA, round, setQandA, setRound, setUser
                     round={round}
                     showModal={showModal}
                     setShowModal={setShowModal}
+                    isNextRound={isNextRound}
+                    setIsNextRound={setIsNextRound}
                 />
             </section>
             <Footer/>

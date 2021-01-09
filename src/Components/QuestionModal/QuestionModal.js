@@ -4,16 +4,15 @@ import {ProgressBar} from 'react-bootstrap'
 
 import "./QuestionModal.scss"
 
-const QuestionModal =({setUserAnswer, inputText, setInputText, setQandA, QandA, isDone, round, setIsDone, setRound, setShowModal, showModal})=>{
-
+const QuestionModal =({setUserAnswer, inputText, setInputText, setQandA, QandA, isDone, round, setIsDone, setRound, setShowModal, showModal, isNextRound, setIsNextRound})=>{
     const [timeoutId, setTimeoutId] = useState(0)
     const [counter, setCounter] = useState(30)
+
     useEffect(()=>{
+        setIsNextRound(false)
         if (isDone && counter===0){
-            setRound(round + 1)
-            setIsDone(false)
-        }
-        // eslint-disable-next-line
+            setIsNextRound(true)
+        }// eslint-disable-next-line
     }, [isDone, counter])
 
     useEffect(() => {
@@ -33,11 +32,11 @@ const QuestionModal =({setUserAnswer, inputText, setInputText, setQandA, QandA, 
         }
         // eslint-disable-next-line
     }, [counter, setInputText, setQandA, QandA]);
-    console.log('The question value is '+ QandA.question)
+    // console.log('The question value is '+ QandA.question)
 
     const closeModal = (timeout)=>{
         clearTimeout(timeout)
-        setQandA({question: '', answer: QandA.answer})
+        // setQandA({question: '', answer: QandA.answer})
         setInputText('')
         setShowModal(false)
     }
@@ -46,6 +45,9 @@ const QuestionModal =({setUserAnswer, inputText, setInputText, setQandA, QandA, 
     const handleSubmit = (event)=>{
         event.preventDefault();
         setUserAnswer(inputText)
+        if(isDone){
+            setIsNextRound(true)
+        }
         closeModal(timeoutId)
     }
 
