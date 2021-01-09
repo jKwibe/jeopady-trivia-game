@@ -287,7 +287,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610228187247</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Set the result component">
+      <created>1610230442639</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1610230442639</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -330,6 +337,7 @@
     <MESSAGE value="Add game Area component." />
     <MESSAGE value="Add isDone to automatically go to the next round." />
     <MESSAGE value="make the Questions update on round change." />
-    <option name="LAST_COMMIT_MESSAGE" value="make the Questions update on round change." />
+    <MESSAGE value="Set the result component" />
+    <option name="LAST_COMMIT_MESSAGE" value="Set the result component" />
   </component>
 </project>
