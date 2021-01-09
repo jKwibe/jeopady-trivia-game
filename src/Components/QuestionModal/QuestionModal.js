@@ -47,10 +47,6 @@ const QuestionModal =({setUserAnswer, inputText, setInputText, setQandA, QandA, 
         event.preventDefault();
         setUserAnswer(inputText)
         closeModal(timeoutId)
-        // setInputText('')
-        // setQandA({question: '', answer: QandA.answer})
-        // clearTimeout(timeoutId)
-        // setShowModal(false)
     }
 
     return(
