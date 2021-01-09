@@ -6,10 +6,18 @@ import "./QuestionModal.scss"
 
 
 
-const QuestionModal =({setUserAnswer, inputText, setInputText, setQandA, QandA})=>{
+const QuestionModal =({setUserAnswer, inputText, setInputText, setQandA, QandA, isDone, round, setIsDone, setRound})=>{
 
     const [timeoutId, setTimeoutId] = useState(0)
     const [counter, setCounter] = useState(30)
+    useEffect(()=>{
+        if (isDone && counter === 0){
+            setRound(round + 1)
+            setIsDone(false)
+        }
+// eslint-disable-next-line
+    }, [isDone, counter])
+
 
     const handleSubmit = (event)=>{
         event.preventDefault();
@@ -24,7 +32,7 @@ const QuestionModal =({setUserAnswer, inputText, setInputText, setQandA, QandA})
         if (counter >= 1 ){
              timeout = setTimeout(() =>{
                  setCounter(counter - 1)
-            }, 25);
+            }, 250);
         }
 
         setTimeoutId(timeout)

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 
 // import roundOneQuestions from "../../Questions/RoundOne";
 // import roundTwoQuestions from "../../Questions/RoundTwo";
@@ -15,33 +15,32 @@ import GameArea from "../GameArea/GameArea";
 
 const GameFrame = ({ score, setPoints, QandA, round, setQandA, setRound, setUserAnswer,questionList, setQuestionList})=> {
     console.log(QandA)
-    let count = 0;
-    let nodes = document.querySelectorAll('.row.cell-btn')
-    nodes.forEach(node => {
-        if (node.children[0].disabled) {
-            count++
-        }
-    })
+    const [isDone, setIsDone] = useState(false)
 
-    // let Questions;
-    // switch (round) {
-    //     case 1:
-    //         Questions = roundOneQuestions;
-    //         break;
-    //     case 2:
-    //         Questions = roundTwoQuestions;
-    //         break;
-    //     default:
-    //         Questions = null;
-    // }
+    useEffect(()=>{
+        let buttons = document.querySelectorAll('.row.cell-btn')
+        let buttonArray = [...buttons]
+        let isAllDisabled = buttonArray.every( (button) => {
+            return button.children[0].disabled
+        })
+        setIsDone(isAllDisabled);
+        // eslint-disable-next-line
+    }, [QandA])
+    // let count = 0;
+    // let
+
+
+    console.log(isDone);
+
 
     console.log(`The round is => ${round}`)
 
-    const handleRoundChange = (e) => {
-        e.preventDefault()
-        console.log('clicked');
-        setRound(round + 1)
-    }
+    // const handleRoundChange = (e) => {
+    //     e.preventDefault()
+    //     console.log('clicked');
+    //     setRound(round + 1)
+    //     setisDone(false)
+    // }
 
     return (
         <>
@@ -72,9 +71,13 @@ const GameFrame = ({ score, setPoints, QandA, round, setQandA, setRound, setUser
                     QandA={QandA}
                     setQandA={setQandA}
                     setUserAnswer={setUserAnswer}
+                    isDone={isDone}
+                    setIsDone={setIsDone}
+                    setRound={setRound}
+                    round={round}
                 />
             </section>
-            {count / 20 === 1 ? <button style={{color: "white"}} className='btn' onClick={handleRoundChange}>Next Round</button>: null }
+            {/*{ isDone ? <button style={{color: "white"}} className='btn' onClick={handleRoundChange}>Next Round</button>: null }*/}
             <Footer/>
         </>
     )
