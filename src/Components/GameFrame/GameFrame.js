@@ -47,10 +47,10 @@ const GameFrame = ({ score, setPoints, QandA, round, setQandA, setRound, setUser
                 setQuestionList(roundTwoQuestions)
                 break;
             default:
-                setQuestionList({})
+                setQuestionList([])
         }
         // eslint-disable-next-line
-    }, [round, questionList])
+    }, [round])
 
     return (
         <>
@@ -59,6 +59,7 @@ const GameFrame = ({ score, setPoints, QandA, round, setQandA, setRound, setUser
             />
 
             <section className="main-game-frame">
+                {questionList.length > 0 &&
                 <GameArea
                     setQandA={setQandA}
                     setPoints={setPoints}
@@ -66,7 +67,12 @@ const GameFrame = ({ score, setPoints, QandA, round, setQandA, setRound, setUser
                     setRound={setRound}
                     round={round}
                     setShowModal={setShowModal}
-                />
+                />}
+                {questionList.length === 0 &&
+                <div align='center' style={{color: 'white'}}>
+                    <h1>THANKS FOR PLAYING!!!</h1>
+                    <h2>Your Score is {score}</h2>
+                </div>}
 
                 <QuestionDisplay
                     QandA={QandA}
