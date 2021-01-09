@@ -58,6 +58,11 @@ const GameFrame = ({ score, setPoints, QandA, round, setQandA, setRound, setUser
                 score={score}
             />
 
+            {questionList.length > 0 &&
+            <div align='center' style={{color: 'white'}}>
+                <h1>Playing Round {round}</h1>
+            </div>}
+
             <section className="main-game-frame">
                 {questionList.length > 0 &&
                 <GameArea
