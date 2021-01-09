@@ -6,7 +6,6 @@ import GameFrame from "../GameFrame/GameFrame";
 
 import "./App.scss"
 import roundOneQuestions from "../../Questions/RoundOne";
-import roundTwoQuestions from "../../Questions/RoundTwo";
 
 const App = ()=>{
     const [start, setStart] = useState(false)
@@ -15,26 +14,13 @@ const App = ()=>{
     const [round, setRound] = useState(1)
     const [QandA, setQandA] = useState({question: '', answer: ''})
     const [userAnswer, setUserAnswer] = useState('')
-    const [questionList, setQuestionList] = useState({})
+    const [questionList, setQuestionList] = useState(roundOneQuestions)
 
     const startGame = ()=>{
         console.log('The Game has started')
         setStart(true)
     }
     console.log(round);
-    useEffect(()=>{
-        switch (round) {
-            case 1:
-                console.log('run in');
-                setQuestionList(roundOneQuestions)
-                break;
-            case 2:
-                setQuestionList(roundTwoQuestions)
-                break;
-            default:
-                setQuestionList({})
-        }
-    }, [round])
 
     useEffect(() => {
         if (userAnswer.toLowerCase() === QandA.answer.toLowerCase()) {

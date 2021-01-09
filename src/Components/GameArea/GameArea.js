@@ -1,6 +1,6 @@
 import GameRow from "../GameRow/GameRow";
 
-const GameArea = ({setPoints, setQandA, Questions, setRound, round})=>{
+const GameArea = ({setPoints, setQandA, Questions, setRound, round, setShowModal})=>{
 
     return(
         <>
@@ -15,6 +15,7 @@ const GameArea = ({setPoints, setQandA, Questions, setRound, round})=>{
                                     setPoints={setPoints}
                                     round={round}
                                     setRound={setRound}
+                                    setShowModal={setShowModal}
                                 />
                             </div>
                         })}

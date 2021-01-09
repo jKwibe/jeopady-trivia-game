@@ -1,8 +1,5 @@
 import React, {useEffect, useState} from "react";
 
-// import roundOneQuestions from "../../Questions/RoundOne";
-// import roundTwoQuestions from "../../Questions/RoundTwo";
-
 import QuestionDisplay from "../QuestionDisplay/QuestionDisplay";
 
 // css
@@ -13,9 +10,13 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import GameArea from "../GameArea/GameArea";
 
+import roundOneQuestions from "../../Questions/RoundOne";
+import roundTwoQuestions from "../../Questions/RoundTwo";
+
 const GameFrame = ({ score, setPoints, QandA, round, setQandA, setRound, setUserAnswer,questionList, setQuestionList})=> {
     console.log(QandA)
     const [isDone, setIsDone] = useState(false)
+    const [showModal, setShowModal] = useState(false)
 
     useEffect(()=>{
         let buttons = document.querySelectorAll('.row.cell-btn')
@@ -26,21 +27,24 @@ const GameFrame = ({ score, setPoints, QandA, round, setQandA, setRound, setUser
         setIsDone(isAllDisabled);
         // eslint-disable-next-line
     }, [QandA])
-    // let count = 0;
-    // let
-
-
-    console.log(isDone);
-
 
     console.log(`The round is => ${round}`)
+    console.log(isDone);
 
-    // const handleRoundChange = (e) => {
-    //     e.preventDefault()
-    //     console.log('clicked');
-    //     setRound(round + 1)
-    //     setisDone(false)
-    // }
+    useEffect(()=>{
+        switch (round) {
+            case 1:
+                console.log('run in');
+                setQuestionList(roundOneQuestions)
+                break;
+            case 2:
+                setQuestionList(roundTwoQuestions)
+                break;
+            default:
+                setQuestionList({})
+        }
+        // eslint-disable-next-line
+    }, [round, questionList])
 
     return (
         <>
@@ -49,23 +53,14 @@ const GameFrame = ({ score, setPoints, QandA, round, setQandA, setRound, setUser
             />
 
             <section className="main-game-frame">
-                {round === 1 ?
-                    <GameArea
-                        setQandA={setQandA}
-                        setPoints={setPoints}
-                        Questions={questionList}
-                        setRound={setRound}
-                        round={round}
-                    />
-                    : round === 2 ?
-                        <GameArea
-                            setQandA={setQandA}
-                            setPoints={setPoints}
-                            Questions={questionList}
-                            setRound={setRound}
-                            round={round}
-                        /> : null
-                }
+                <GameArea
+                    setQandA={setQandA}
+                    setPoints={setPoints}
+                    Questions={questionList}
+                    setRound={setRound}
+                    round={round}
+                    setShowModal={setShowModal}
+                />
 
                 <QuestionDisplay
                     QandA={QandA}
@@ -75,9 +70,10 @@ const GameFrame = ({ score, setPoints, QandA, round, setQandA, setRound, setUser
                     setIsDone={setIsDone}
                     setRound={setRound}
                     round={round}
+                    showModal={showModal}
+                    setShowModal={setShowModal}
                 />
             </section>
-            {/*{ isDone ? <button style={{color: "white"}} className='btn' onClick={handleRoundChange}>Next Round</button>: null }*/}
             <Footer/>
         </>
     )

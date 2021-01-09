@@ -4,28 +4,17 @@ import {ProgressBar} from 'react-bootstrap'
 
 import "./QuestionModal.scss"
 
-
-
-const QuestionModal =({setUserAnswer, inputText, setInputText, setQandA, QandA, isDone, round, setIsDone, setRound})=>{
+const QuestionModal =({setUserAnswer, inputText, setInputText, setQandA, QandA, isDone, round, setIsDone, setRound, setShowModal, showModal})=>{
 
     const [timeoutId, setTimeoutId] = useState(0)
     const [counter, setCounter] = useState(30)
     useEffect(()=>{
-        if (isDone && counter === 0){
+        if (isDone && counter===0){
             setRound(round + 1)
             setIsDone(false)
         }
-// eslint-disable-next-line
+        // eslint-disable-next-line
     }, [isDone, counter])
-
-
-    const handleSubmit = (event)=>{
-        event.preventDefault();
-        setUserAnswer(inputText)
-        setInputText('')
-        setQandA({question: '', answer: QandA.answer})
-        clearTimeout(timeoutId)
-    }
 
     useEffect(() => {
         let timeout;
@@ -39,12 +28,30 @@ const QuestionModal =({setUserAnswer, inputText, setInputText, setQandA, QandA, 
 
         return ()=> {
             if (counter === 1){
-                clearTimeout(timeout)
-                setQandA({question: '', answer: QandA.answer})
-                setInputText('')
+                closeModal(timeout)
             }
         }
+        // eslint-disable-next-line
     }, [counter, setInputText, setQandA, QandA]);
+    console.log('The question value is '+ QandA.question)
+
+    const closeModal = (timeout)=>{
+        clearTimeout(timeout)
+        setQandA({question: '', answer: QandA.answer})
+        setInputText('')
+        setShowModal(false)
+    }
+
+
+    const handleSubmit = (event)=>{
+        event.preventDefault();
+        setUserAnswer(inputText)
+        closeModal(timeoutId)
+        // setInputText('')
+        // setQandA({question: '', answer: QandA.answer})
+        // clearTimeout(timeoutId)
+        // setShowModal(false)
+    }
 
     return(
         <section className="question-modal">

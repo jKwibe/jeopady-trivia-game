@@ -4,7 +4,11 @@
     <list default="true" id="4b5ebdd8-0ca9-48a8-bbe7-8e4f0c78ff20" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/App/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/App/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/GameArea/GameArea.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/GameArea/GameArea.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/GameCell/GameCell.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/GameCell/GameCell.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/GameFrame/GameFrame.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/GameFrame/GameFrame.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/GameRow/GameRow.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/GameRow/GameRow.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/QuestionDisplay/QuestionDisplay.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/QuestionDisplay/QuestionDisplay.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/QuestionModal/QuestionModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/QuestionModal/QuestionModal.js" afterDir="false" />
     </list>
@@ -119,7 +123,7 @@
       <workItem from="1608602514957" duration="3186000" />
       <workItem from="1608844061155" duration="3915000" />
       <workItem from="1610155021714" duration="3629000" />
-      <workItem from="1610163319657" duration="2585000" />
+      <workItem from="1610163319657" duration="5850000" />
     </task>
     <task id="LOCAL-00001" summary="Add Gameframe component.">
       <created>1608334622641</created>
@@ -275,7 +279,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609035004851</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Add isDone to automatically go to the next round.">
+      <created>1610167064550</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1610167064550</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -316,6 +327,7 @@
     <MESSAGE value="Add more color and styling." />
     <MESSAGE value="Add background." />
     <MESSAGE value="Add game Area component." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add game Area component." />
+    <MESSAGE value="Add isDone to automatically go to the next round." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add isDone to automatically go to the next round." />
   </component>
 </project>
