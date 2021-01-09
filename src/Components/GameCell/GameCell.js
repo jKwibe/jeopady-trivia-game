@@ -26,7 +26,6 @@ const GameCell = ({points, question, setPoints,  setQandA, round, setShowModal})
                 onClick={handleButtonClick}
                 disabled={disable}
             >
-
                 <strong className={disable ? "text-cancel": ""}>{ points }</strong>
             </Button>
         </>

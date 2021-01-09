@@ -14,9 +14,19 @@ import roundOneQuestions from "../../Questions/RoundOne";
 import roundTwoQuestions from "../../Questions/RoundTwo";
 
 const GameFrame = ({ score, setPoints, QandA, round, setQandA, setRound, setUserAnswer,questionList, setQuestionList})=> {
-    console.log(QandA)
     const [isDone, setIsDone] = useState(false)
     const [showModal, setShowModal] = useState(false)
+    const [isNextRound, setIsNextRound] = useState(false)
+
+    console.log(isDone, isNextRound);
+
+    useEffect(()=>{
+        if(isDone && isNextRound){
+            setRound(round + 1)
+            setIsDone(false)
+        }
+        // eslint-disable-next-line
+    }, [isNextRound, isDone])
 
     useEffect(()=>{
         let buttons = document.querySelectorAll('.row.cell-btn')
@@ -28,13 +38,9 @@ const GameFrame = ({ score, setPoints, QandA, round, setQandA, setRound, setUser
         // eslint-disable-next-line
     }, [QandA])
 
-    console.log(`The round is => ${round}`)
-    console.log(isDone);
-
     useEffect(()=>{
         switch (round) {
             case 1:
-                console.log('run in');
                 setQuestionList(roundOneQuestions)
                 break;
             case 2:
@@ -72,6 +78,8 @@ const GameFrame = ({ score, setPoints, QandA, round, setQandA, setRound, setUser
                     round={round}
                     showModal={showModal}
                     setShowModal={setShowModal}
+                    isNextRound={isNextRound}
+                    setIsNextRound={setIsNextRound}
                 />
             </section>
             <Footer/>
