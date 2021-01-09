@@ -1,7 +1,7 @@
 import GameRow from "../GameRow/GameRow";
-import React from "react";
 
-const GameArea = ({setPoints, setQandA, Questions})=>{
+const GameArea = ({setPoints, setQandA, Questions, setRound, round})=>{
+
     return(
         <>
             <section className="game-main-section container">
@@ -13,6 +13,8 @@ const GameArea = ({setPoints, setQandA, Questions})=>{
                                     category={cat}
                                     setQandA={setQandA}
                                     setPoints={setPoints}
+                                    round={round}
+                                    setRound={setRound}
                                 />
                             </div>
                         })}

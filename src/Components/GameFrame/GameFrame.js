@@ -1,8 +1,9 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 
-import roundOneQuestions from "../../Questions/RoundOne";
+// import roundOneQuestions from "../../Questions/RoundOne";
+// import roundTwoQuestions from "../../Questions/RoundTwo";
+
 import QuestionDisplay from "../QuestionDisplay/QuestionDisplay";
-// import GameRow from "../GameRow/GameRow";
 
 // css
 import "./GameFrame.scss"
@@ -12,28 +13,35 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import GameArea from "../GameArea/GameArea";
 
-const GameFrame = ()=>{
-    const[points, setPoints] = useState(0)
-    const[score, setScore] = useState(0)
-    const[Question, setQuestion] = useState(roundOneQuestions)
-    const[QandA, setQandA] = useState({question: '', answer: ''})
-    const[userAnswer, setUserAnswer] = useState('')
-
+const GameFrame = ({ score, setPoints, QandA, round, setQandA, setRound, setUserAnswer,questionList, setQuestionList})=> {
     console.log(QandA)
-
-    useEffect(()=>{
-        if(userAnswer.toLowerCase() === QandA.answer.toLowerCase()){
-            console.log("YOUR ANSWER IS CORRECT");
-            setScore(score + points)
-            setUserAnswer('')
+    let count = 0;
+    let nodes = document.querySelectorAll('.row.cell-btn')
+    nodes.forEach(node => {
+        if (node.children[0].disabled) {
+            count++
         }
-        if(userAnswer.toLowerCase() !== QandA.answer.toLowerCase() && userAnswer !== ''){
-            console.log("YOUR ANSWER IS WRONG");
-            setScore(score - points)
-            setUserAnswer('')
-        }
+    })
 
-    }, [score, points, QandA.answer, userAnswer])
+    // let Questions;
+    // switch (round) {
+    //     case 1:
+    //         Questions = roundOneQuestions;
+    //         break;
+    //     case 2:
+    //         Questions = roundTwoQuestions;
+    //         break;
+    //     default:
+    //         Questions = null;
+    // }
+
+    console.log(`The round is => ${round}`)
+
+    const handleRoundChange = (e) => {
+        e.preventDefault()
+        console.log('clicked');
+        setRound(round + 1)
+    }
 
     return (
         <>
@@ -42,12 +50,23 @@ const GameFrame = ()=>{
             />
 
             <section className="main-game-frame">
-                <GameArea
-                    setQandA={setQandA}
-                    setPoints={setPoints}
-                    Questions={Question}
-                    setQuestion={setQuestion}
-                />
+                {round === 1 ?
+                    <GameArea
+                        setQandA={setQandA}
+                        setPoints={setPoints}
+                        Questions={questionList}
+                        setRound={setRound}
+                        round={round}
+                    />
+                    : round === 2 ?
+                        <GameArea
+                            setQandA={setQandA}
+                            setPoints={setPoints}
+                            Questions={questionList}
+                            setRound={setRound}
+                            round={round}
+                        /> : null
+                }
 
                 <QuestionDisplay
                     QandA={QandA}
@@ -55,6 +74,7 @@ const GameFrame = ()=>{
                     setUserAnswer={setUserAnswer}
                 />
             </section>
+            {count / 20 === 1 ? <button style={{color: "white"}} className='btn' onClick={handleRoundChange}>Next Round</button>: null }
             <Footer/>
         </>
     )

@@ -1,10 +1,14 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {Button} from "react-bootstrap";
 
 
-const GameCell = ({points, question, setQuestion, setAnswer, setPoints,  setQandA}) => {
+const GameCell = ({points, question, setPoints,  setQandA, round}) => {
     const [disable, setDisable] = useState(false)
-
+    useEffect(()=>{
+        return ()=>{
+            setDisable(false)
+        }
+    },[round])
     return(
         <>
             <Button
@@ -14,8 +18,6 @@ const GameCell = ({points, question, setQuestion, setAnswer, setPoints,  setQand
                         question: question.question,
                         answer: question.answer
                     })
-                    // setQuestion(question.question)
-                    // setAnswer(question.answer)
                     setPoints(points)
                     setDisable(true)
                 }}
