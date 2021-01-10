@@ -10,7 +10,6 @@ import roundOneQuestions from "../../Questions/RoundOne";
 
 
 const App = ({ gameStart, questionAndAnswer, questionPoints })=>{
-    const [points, setPoints] = useState(0)
     const [score, setScore] = useState(0)
     const [round, setRound] = useState(1)
     const [userAnswer, setUserAnswer] = useState('')
@@ -22,21 +21,18 @@ const App = ({ gameStart, questionAndAnswer, questionPoints })=>{
     useEffect(() => {
         if (userAnswer.toLowerCase() === questionAndAnswer.answer.toLowerCase()) {
             console.log("YOUR ANSWER IS CORRECT");
-            setScore(score + points)
+            setScore(score + questionPoints)
             setUserAnswer('')
         }
         if (userAnswer.toLowerCase() !== questionAndAnswer.answer.toLowerCase() && userAnswer !== '') {
             console.log("YOUR ANSWER IS WRONG");
-            setScore(score - points)
+            setScore(score - questionPoints)
             setUserAnswer('')
         }
         //eslint-disable-next-line
-    }, [score, points, questionAndAnswer.answer, userAnswer])
-
+    }, [score, questionAndAnswer.answer, userAnswer])
 
     const render = gameStart ? <GameFrame
-                            points={points}
-                            setPoints={setPoints}
                             score={score}
                             setScore={setScore}
                             round={round}
@@ -60,11 +56,14 @@ const App = ({ gameStart, questionAndAnswer, questionPoints })=>{
     )
 }
 
-export  const  mapStateToProps = state => ({
-   gameStart: state.startGame,
-    questionAndAnswer: state.QandA,
-    questionPoints: state.playerPoints
-})
+const  mapStateToProps = state => {
+    console.log(state);
+    return{
+            gameStart: state.startGame,
+            questionAndAnswer: state.QandA,
+            questionPoints: state.playerPoints
+        }
+}
 
 
 export default connect(mapStateToProps)(App);
