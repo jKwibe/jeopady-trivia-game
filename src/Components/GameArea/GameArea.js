@@ -11,7 +11,6 @@ const GameArea = ({setPoints, setQandA, Questions, setRound, round, setShowModal
                             return <div key={index} className="col          ">
                                 <GameRow
                                     category={cat}
-                                    setQandA={setQandA}
                                     setPoints={setPoints}
                                     round={round}
                                     setRound={setRound}

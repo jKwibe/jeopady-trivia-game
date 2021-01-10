@@ -1,10 +1,11 @@
 import AnswerSubmit from "../AnswerSubmit/AnswerSubmit";
 import React, {useEffect, useState} from "react";
-import {ProgressBar} from 'react-bootstrap'
+import {ProgressBar} from 'react-bootstrap';
+import { connect } from 'react-redux';
 
 import "./QuestionModal.scss"
 
-const QuestionModal =({setUserAnswer, inputText, setInputText, setQandA, QandA, isDone, round, setIsDone, setRound, setShowModal, showModal, isNextRound, setIsNextRound})=>{
+const QuestionModal =({questionAndAnswer, setUserAnswer, inputText, setInputText, isDone, setShowModal, setIsNextRound})=>{
     const [timeoutId, setTimeoutId] = useState(0)
     const [counter, setCounter] = useState(30)
 
@@ -20,7 +21,7 @@ const QuestionModal =({setUserAnswer, inputText, setInputText, setQandA, QandA, 
         if (counter >= 1 ){
              timeout = setTimeout(() =>{
                  setCounter(counter - 1)
-            }, 250);
+            }, 2);
         }
 
         setTimeoutId(timeout)
@@ -31,7 +32,7 @@ const QuestionModal =({setUserAnswer, inputText, setInputText, setQandA, QandA, 
             }
         }
         // eslint-disable-next-line
-    }, [counter, setInputText, setQandA, QandA]);
+    }, [counter, setInputText, questionAndAnswer]);
     // console.log('The question value is '+ QandA.question)
 
     const closeModal = (timeout)=>{
@@ -55,7 +56,7 @@ const QuestionModal =({setUserAnswer, inputText, setInputText, setQandA, QandA, 
         <section className="question-modal">
 
             <section>
-                <strong><p dangerouslySetInnerHTML={{__html: QandA.question}}></p></strong>
+                <strong><p dangerouslySetInnerHTML={{__html: questionAndAnswer.question}}></p></strong>
                 <hr/>
 
             </section>
@@ -70,4 +71,8 @@ const QuestionModal =({setUserAnswer, inputText, setInputText, setQandA, QandA, 
 
 }
 
-export default QuestionModal
+export  const  mapStateToProps = state => ({
+    questionAndAnswer: state.QandA
+})
+
+export default connect(mapStateToProps)(QuestionModal);

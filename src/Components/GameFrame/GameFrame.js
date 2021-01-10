@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from "react";
+import { connect } from 'react-redux';
 
 import QuestionDisplay from "../QuestionDisplay/QuestionDisplay";
 
@@ -13,7 +14,7 @@ import GameArea from "../GameArea/GameArea";
 import roundOneQuestions from "../../Questions/RoundOne";
 import roundTwoQuestions from "../../Questions/RoundTwo";
 
-const GameFrame = ({ score, setPoints, QandA, round, setQandA, setRound, setUserAnswer,questionList, setQuestionList})=> {
+const GameFrame = ({ questionAndAnswer, score, setPoints, round, setRound, setUserAnswer,questionList, setQuestionList})=> {
     const [isDone, setIsDone] = useState(false)
     const [showModal, setShowModal] = useState(false)
     const [isNextRound, setIsNextRound] = useState(false)
@@ -36,7 +37,7 @@ const GameFrame = ({ score, setPoints, QandA, round, setQandA, setRound, setUser
         })
         setIsDone(isAllDisabled);
         // eslint-disable-next-line
-    }, [QandA])
+    }, [questionAndAnswer])
 
     useEffect(()=>{
         switch (round) {
@@ -66,7 +67,6 @@ const GameFrame = ({ score, setPoints, QandA, round, setQandA, setRound, setUser
             <section className="main-game-frame">
                 {questionList.length > 0 &&
                 <GameArea
-                    setQandA={setQandA}
                     setPoints={setPoints}
                     Questions={questionList}
                     setRound={setRound}
@@ -80,16 +80,10 @@ const GameFrame = ({ score, setPoints, QandA, round, setQandA, setRound, setUser
                 </div>}
 
                 <QuestionDisplay
-                    QandA={QandA}
-                    setQandA={setQandA}
                     setUserAnswer={setUserAnswer}
                     isDone={isDone}
-                    setIsDone={setIsDone}
-                    setRound={setRound}
-                    round={round}
                     showModal={showModal}
                     setShowModal={setShowModal}
-                    isNextRound={isNextRound}
                     setIsNextRound={setIsNextRound}
                 />
             </section>
@@ -98,4 +92,8 @@ const GameFrame = ({ score, setPoints, QandA, round, setQandA, setRound, setUser
     )
 }
 
-export default GameFrame;
+export  const  mapStateToProps = state => ({
+    questionAndAnswer: state.QandA
+})
+
+export default connect(mapStateToProps)(GameFrame);
