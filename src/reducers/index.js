@@ -40,7 +40,7 @@ const gameQuestions = (state = [], action) => {
     }
 }
 
-const gameScores = (state = {score: 0}, action) => {
+const gameScores = (state = {score: 0, round: 1}, action) => {
     switch (action.type) {
         case  'ADD_SCORE':
             return {
@@ -51,6 +51,11 @@ const gameScores = (state = {score: 0}, action) => {
             return {
                 ...state,
                 score: state.score - action.points
+            }
+        case 'ADD_ROUND':
+            return {
+                ...state,
+                round: state.round + 1
             }
         default:
             return  state

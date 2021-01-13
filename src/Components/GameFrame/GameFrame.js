@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import { connect } from 'react-redux';
 
-import { setGameQuestions } from "../../actions";
+import { setGameQuestions, addRound } from "../../actions";
 import QuestionDisplay from "../QuestionDisplay/QuestionDisplay";
 
 // css
@@ -15,7 +15,7 @@ import GameArea from "../GameArea/GameArea";
 import roundOneQuestions from "../../Questions/RoundOne";
 import roundTwoQuestions from "../../Questions/RoundTwo";
 
-const GameFrame = ({ questionAndAnswer, score, setPoints, round, setRound, Questions, setGameQuestions })=> {
+const GameFrame = ({ questionAndAnswer, score, round, Questions, setGameQuestions, addRound })=> {
     const [isDone, setIsDone] = useState(false)
     const [showModal, setShowModal] = useState(false)
     const [isNextRound, setIsNextRound] = useState(false)
@@ -24,7 +24,7 @@ const GameFrame = ({ questionAndAnswer, score, setPoints, round, setRound, Quest
 
     useEffect(()=>{
         if(isDone && isNextRound){
-            setRound(round + 1)
+            addRound()
             setIsDone(false)
         }
         // eslint-disable-next-line
@@ -66,9 +66,6 @@ const GameFrame = ({ questionAndAnswer, score, setPoints, round, setRound, Quest
             <section className="main-game-frame">
                 {Questions.length > 0 &&
                 <GameArea
-                    setPoints={setPoints}
-                    setRound={setRound}
-                    round={round}
                     setShowModal={setShowModal}
                 />}
                 {Questions.length === 0 &&
@@ -92,7 +89,8 @@ const GameFrame = ({ questionAndAnswer, score, setPoints, round, setRound, Quest
 const  mapStateToProps = state => ({
     questionAndAnswer: state.QandA,
     Questions: state.gameQuestions,
-    score: state.gameScores.score
+    score: state.gameScores.score,
+    round: state.gameScores.round
 })
 
-export default connect(mapStateToProps, { setGameQuestions })(GameFrame);
+export default connect(mapStateToProps, { setGameQuestions, addRound })(GameFrame);

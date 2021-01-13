@@ -5,9 +5,10 @@
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/App/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/App/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/GameArea/GameArea.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/GameArea/GameArea.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/GameCell/GameCell.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/GameCell/GameCell.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/GameFrame/GameFrame.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/GameFrame/GameFrame.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Header/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/QuestionModal/QuestionModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/QuestionModal/QuestionModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/GameRow/GameRow.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/GameRow/GameRow.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/actions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/index.js" afterDir="false" />
     </list>
@@ -331,7 +332,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610507882276</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Implement the Scores state in redux.">
+      <created>1610509238641</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1610509238641</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -350,7 +358,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add bootstrap packages" />
     <MESSAGE value="Add game frame style" />
     <MESSAGE value="Update gameframe data" />
     <MESSAGE value="Display question to app." />
@@ -375,6 +382,7 @@
     <MESSAGE value="Add reducers and Actions" />
     <MESSAGE value="Implement the user answer state in redux." />
     <MESSAGE value="Implement the QuestionList state in redux." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement the QuestionList state in redux." />
+    <MESSAGE value="Implement the Scores state in redux." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement the Scores state in redux." />
   </component>
 </project>

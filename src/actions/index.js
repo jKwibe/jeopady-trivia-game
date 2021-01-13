@@ -47,3 +47,9 @@ export  const subtractScore = points => {
         points
     }
 }
+
+export  const addRound = () => {
+    return {
+        type: 'ADD_ROUND'
+    }
+}

@@ -4,7 +4,7 @@ import GameCell from "../GameCell/GameCell";
 import {questionPoints} from '../../actions'
 
 import "./GameRow.scss"
-const GameRow = ({category, setPoints, round, setShowModal})=>{
+const GameRow = ({category, round, setShowModal})=>{
 
     return(
        <>
@@ -18,10 +18,8 @@ const GameRow = ({category, setPoints, round, setShowModal})=>{
                    className="row cell-btn"
                >
                    <GameCell
-                       setPoints={setPoints}
                        points={points}
                        question={question}
-                       round={round}
                        setShowModal={setShowModal}
                    />
                    </section>
@@ -32,7 +30,8 @@ const GameRow = ({category, setPoints, round, setShowModal})=>{
 }
 
 export  const  mapStateToProps = state => ({
-    QnA: state.QandA
+    QnA: state.QandA,
+    round: state.gameScores.round
 })
 
 export default connect(mapStateToProps, { questionPoints })(GameRow);

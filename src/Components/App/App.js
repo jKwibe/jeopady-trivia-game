@@ -10,9 +10,9 @@ import {setUserAnswer, subtractScore, addScore} from "../../actions";
 
 
 const App = ({ gameStart, questionAndAnswer, questionPoints, setUserAnswer, subtractScore, addScore })=>{
-    const [round, setRound] = useState(1)
+    // const [round, setRound] = useState(1)
 
-    console.log(round);
+    // console.log(round);
     console.log(questionPoints);
 
     useEffect(() => {
@@ -29,12 +29,7 @@ const App = ({ gameStart, questionAndAnswer, questionPoints, setUserAnswer, subt
         //eslint-disable-next-line
     }, [questionAndAnswer])
 
-    const render = gameStart ? <GameFrame
-                            round={round}
-                            setRound={setRound}
-                            />
-                         : <StartButton />
-
+    const render = gameStart ? <GameFrame/> : <StartButton />
     return(
         <main
             className={`main-app ${ gameStart? '': 'initial-bg'} `}

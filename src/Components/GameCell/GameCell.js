@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import { questionNAnswer, questionPoints } from "../../actions";
 
 
-const GameCell = ({points, question, questionPoints, round, setShowModal, questionNAnswer}) => {
+const GameCell = ({ points, question, questionPoints, round, setShowModal, questionNAnswer}) => {
     const [disable, setDisable] = useState(false)
     useEffect(()=>{
         return ()=>{
@@ -33,7 +33,8 @@ const GameCell = ({points, question, questionPoints, round, setShowModal, questi
 }
 
 export  const  mapStateToProps = state => ({
-    QnA: state.QandA
+    QnA: state.QandA,
+    round: state.gameScores.round
 })
 
 export default connect(mapStateToProps, { questionPoints , questionNAnswer})(GameCell);
