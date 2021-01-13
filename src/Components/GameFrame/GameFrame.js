@@ -28,7 +28,7 @@ const GameFrame = ({ questionAndAnswer, score, round, Questions, setGameQuestion
             setIsDone(false)
         }
         // eslint-disable-next-line
-    }, [isNextRound, isDone])
+    }, [isNextRound])
 
     useEffect(()=>{
         let buttons = document.querySelectorAll('.row.cell-btn')
