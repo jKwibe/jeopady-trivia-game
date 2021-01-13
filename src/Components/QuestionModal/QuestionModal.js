@@ -23,7 +23,7 @@ const QuestionModal =({questionAndAnswer, inputText, setInputText, isDone, setSh
         if (counter >= 1 ){
              timeout = setTimeout(() =>{
                  setCounter(counter - 1)
-            }, 2);
+            }, 250);
         }
 
         setTimeoutId(timeout)

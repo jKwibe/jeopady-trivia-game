@@ -33,3 +33,17 @@ export const setGameQuestions = questions => {
         questions
     }
 }
+
+export  const addScore = points => {
+    return {
+        type: 'ADD_SCORE',
+        points
+    }
+}
+
+export  const subtractScore = points => {
+    return {
+        type: 'SUBTRACT_SCORE',
+        points
+    }
+}

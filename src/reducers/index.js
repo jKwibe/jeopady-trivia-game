@@ -40,11 +40,29 @@ const gameQuestions = (state = [], action) => {
     }
 }
 
+const gameScores = (state = {score: 0}, action) => {
+    switch (action.type) {
+        case  'ADD_SCORE':
+            return {
+                ...state,
+                score: state.score + action.points
+            }
+        case 'SUBTRACT_SCORE':
+            return {
+                ...state,
+                score: state.score - action.points
+            }
+        default:
+            return  state
+    }
+}
+
 const rootReducers = combineReducers({
     startGame,
     QandA,
     playerPoints,
-    gameQuestions
+    gameQuestions,
+    gameScores
 })
 
 export default rootReducers

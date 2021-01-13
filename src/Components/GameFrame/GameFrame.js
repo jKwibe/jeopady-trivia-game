@@ -57,10 +57,7 @@ const GameFrame = ({ questionAndAnswer, score, setPoints, round, setRound, Quest
 
     return (
         <>
-            <Header
-                score={score}
-            />
-
+            <Header/>
             {Questions.length > 0 &&
             <div align='center' style={{color: 'white'}}>
                 <h1>Playing Round {round}</h1>
@@ -77,7 +74,7 @@ const GameFrame = ({ questionAndAnswer, score, setPoints, round, setRound, Quest
                 {Questions.length === 0 &&
                 <div align='center' style={{color: 'white'}}>
                     <h1>THANKS FOR PLAYING!!!</h1>
-                    <h2>Your Score is {score}</h2>
+                    <h2>Your Score is {score} </h2>
                 </div>}
 
                 <QuestionDisplay
@@ -94,7 +91,8 @@ const GameFrame = ({ questionAndAnswer, score, setPoints, round, setRound, Quest
 
 const  mapStateToProps = state => ({
     questionAndAnswer: state.QandA,
-    Questions: state.gameQuestions
+    Questions: state.gameQuestions,
+    score: state.gameScores.score
 })
 
 export default connect(mapStateToProps, { setGameQuestions })(GameFrame);

@@ -1,4 +1,5 @@
 import "./Header.scss"
+import {connect} from "react-redux";
 
 const Header = ({score}) => {
 
@@ -14,4 +15,8 @@ const Header = ({score}) => {
     )
 }
 
-export default Header
+const  mapStateToProps = state => ({
+    score: state.gameScores.score
+})
+
+export default connect(mapStateToProps)(Header);
