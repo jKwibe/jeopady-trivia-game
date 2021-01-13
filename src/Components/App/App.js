@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react'
+import {useEffect} from 'react'
 
 // Import Components
 import StartButton from "../Start/Start";
@@ -10,10 +10,6 @@ import {setUserAnswer, subtractScore, addScore} from "../../actions";
 
 
 const App = ({ gameStart, questionAndAnswer, questionPoints, setUserAnswer, subtractScore, addScore })=>{
-    // const [round, setRound] = useState(1)
-
-    // console.log(round);
-    console.log(questionPoints);
 
     useEffect(() => {
         if (questionAndAnswer.userAnswer.toLowerCase() === questionAndAnswer.answer.toLowerCase() && questionAndAnswer.userAnswer !== '') {
