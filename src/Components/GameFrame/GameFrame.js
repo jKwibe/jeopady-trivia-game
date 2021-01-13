@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import { connect } from 'react-redux';
 
 import { setGameQuestions, addRound } from "../../actions";
@@ -14,8 +14,9 @@ import GameArea from "../GameArea/GameArea";
 
 import roundOneQuestions from "../../Questions/RoundOne";
 import roundTwoQuestions from "../../Questions/RoundTwo";
+import Results from "../Resullts/Results";
 
-const GameFrame = ({ questionAndAnswer, score, round, Questions, setGameQuestions, addRound })=> {
+const GameFrame = ({ questionAndAnswer, round, Questions, setGameQuestions, addRound })=> {
     const [isDone, setIsDone] = useState(false)
     const [showModal, setShowModal] = useState(false)
     const [isNextRound, setIsNextRound] = useState(false)
@@ -67,11 +68,7 @@ const GameFrame = ({ questionAndAnswer, score, round, Questions, setGameQuestion
 
                 { Questions.length > 0 && mainGameArea }
 
-                {Questions.length === 0 &&
-                <div align='center' style={{color: 'white'}}>
-                    <h1>THANKS FOR PLAYING!!!</h1>
-                    <h2>Your Score is {score} </h2>
-                </div>}
+                { Questions.length === 0 && <Results/> }
 
                 <QuestionDisplay
                     isDone={isDone}
