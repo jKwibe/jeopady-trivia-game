@@ -1,5 +1,7 @@
 import React, {useEffect, useState} from "react";
+import { connect } from 'react-redux';
 
+import { setGameQuestions, addRound } from "../../actions";
 import QuestionDisplay from "../QuestionDisplay/QuestionDisplay";
 
 // css
@@ -13,20 +15,20 @@ import GameArea from "../GameArea/GameArea";
 import roundOneQuestions from "../../Questions/RoundOne";
 import roundTwoQuestions from "../../Questions/RoundTwo";
 
-const GameFrame = ({ score, setPoints, QandA, round, setQandA, setRound, setUserAnswer,questionList, setQuestionList})=> {
+const GameFrame = ({ questionAndAnswer, score, round, Questions, setGameQuestions, addRound })=> {
     const [isDone, setIsDone] = useState(false)
     const [showModal, setShowModal] = useState(false)
     const [isNextRound, setIsNextRound] = useState(false)
 
-    console.log(isDone, isNextRound);
+    console.log(isDone, isNextRound, "GameFrame");
 
     useEffect(()=>{
         if(isDone && isNextRound){
-            setRound(round + 1)
+            addRound()
             setIsDone(false)
         }
         // eslint-disable-next-line
-    }, [isNextRound, isDone])
+    }, [isNextRound])
 
     useEffect(()=>{
         let buttons = document.querySelectorAll('.row.cell-btn')
@@ -36,60 +38,46 @@ const GameFrame = ({ score, setPoints, QandA, round, setQandA, setRound, setUser
         })
         setIsDone(isAllDisabled);
         // eslint-disable-next-line
-    }, [QandA])
+    }, [questionAndAnswer])
+
 
     useEffect(()=>{
         switch (round) {
             case 1:
-                setQuestionList(roundOneQuestions)
+                setGameQuestions(roundOneQuestions)
                 break;
             case 2:
-                setQuestionList(roundTwoQuestions)
+                setGameQuestions(roundTwoQuestions)
                 break;
             default:
-                setQuestionList([])
+                setGameQuestions([])
         }
         // eslint-disable-next-line
     }, [round])
 
     return (
         <>
-            <Header
-                score={score}
-            />
-
-            {questionList.length > 0 &&
+            <Header/>
+            {Questions.length > 0 &&
             <div align='center' style={{color: 'white'}}>
                 <h1>Playing Round {round}</h1>
             </div>}
 
             <section className="main-game-frame">
-                {questionList.length > 0 &&
+                {Questions.length > 0 &&
                 <GameArea
-                    setQandA={setQandA}
-                    setPoints={setPoints}
-                    Questions={questionList}
-                    setRound={setRound}
-                    round={round}
                     setShowModal={setShowModal}
                 />}
-                {questionList.length === 0 &&
+                {Questions.length === 0 &&
                 <div align='center' style={{color: 'white'}}>
                     <h1>THANKS FOR PLAYING!!!</h1>
-                    <h2>Your Score is {score}</h2>
+                    <h2>Your Score is {score} </h2>
                 </div>}
 
                 <QuestionDisplay
-                    QandA={QandA}
-                    setQandA={setQandA}
-                    setUserAnswer={setUserAnswer}
                     isDone={isDone}
-                    setIsDone={setIsDone}
-                    setRound={setRound}
-                    round={round}
                     showModal={showModal}
                     setShowModal={setShowModal}
-                    isNextRound={isNextRound}
                     setIsNextRound={setIsNextRound}
                 />
             </section>
@@ -98,4 +86,11 @@ const GameFrame = ({ score, setPoints, QandA, round, setQandA, setRound, setUser
     )
 }
 
-export default GameFrame;
+const  mapStateToProps = state => ({
+    questionAndAnswer: state.QandA,
+    Questions: state.gameQuestions,
+    score: state.gameScores.score,
+    round: state.gameScores.round
+})
+
+export default connect(mapStateToProps, { setGameQuestions, addRound })(GameFrame);

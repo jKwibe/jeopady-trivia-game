@@ -1,8 +1,11 @@
 import {useEffect, useState} from "react";
 import {Button} from "react-bootstrap";
+import { connect } from 'react-redux'
+
+import { questionNAnswer, questionPoints } from "../../actions";
 
 
-const GameCell = ({points, question, setPoints,  setQandA, round, setShowModal}) => {
+const GameCell = ({ points, question, questionPoints, round, setShowModal, questionNAnswer}) => {
     const [disable, setDisable] = useState(false)
     useEffect(()=>{
         return ()=>{
@@ -11,11 +14,8 @@ const GameCell = ({points, question, setPoints,  setQandA, round, setShowModal})
     },[round])
 
     const handleButtonClick = ()=>{
-        setQandA({
-            question: question.question,
-            answer: question.answer
-        })
-        setPoints(points)
+        questionPoints(points)
+        questionNAnswer(question)
         setDisable(true)
         setShowModal(true)
     }
@@ -32,4 +32,9 @@ const GameCell = ({points, question, setPoints,  setQandA, round, setShowModal})
     )
 }
 
-export default GameCell;
+export  const  mapStateToProps = state => ({
+    QnA: state.QandA,
+    round: state.gameScores.round
+})
+
+export default connect(mapStateToProps, { questionPoints , questionNAnswer})(GameCell);

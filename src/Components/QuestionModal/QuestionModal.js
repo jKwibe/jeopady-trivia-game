@@ -1,10 +1,13 @@
 import AnswerSubmit from "../AnswerSubmit/AnswerSubmit";
 import React, {useEffect, useState} from "react";
-import {ProgressBar} from 'react-bootstrap'
+import {ProgressBar} from 'react-bootstrap';
+import { connect } from 'react-redux';
+
+import { setUserAnswer } from "../../actions";
 
 import "./QuestionModal.scss"
 
-const QuestionModal =({setUserAnswer, inputText, setInputText, setQandA, QandA, isDone, round, setIsDone, setRound, setShowModal, showModal, isNextRound, setIsNextRound})=>{
+const QuestionModal =({questionAndAnswer, inputText, setInputText, isDone, setShowModal, setIsNextRound, setUserAnswer})=>{
     const [timeoutId, setTimeoutId] = useState(0)
     const [counter, setCounter] = useState(30)
 
@@ -31,12 +34,10 @@ const QuestionModal =({setUserAnswer, inputText, setInputText, setQandA, QandA, 
             }
         }
         // eslint-disable-next-line
-    }, [counter, setInputText, setQandA, QandA]);
-    // console.log('The question value is '+ QandA.question)
+    }, [counter, setInputText, questionAndAnswer]);
 
     const closeModal = (timeout)=>{
         clearTimeout(timeout)
-        // setQandA({question: '', answer: QandA.answer})
         setInputText('')
         setShowModal(false)
     }
@@ -44,6 +45,7 @@ const QuestionModal =({setUserAnswer, inputText, setInputText, setQandA, QandA, 
 
     const handleSubmit = (event)=>{
         event.preventDefault();
+        setUserAnswer(inputText)
         setUserAnswer(inputText)
         if(isDone){
             setIsNextRound(true)
@@ -55,7 +57,7 @@ const QuestionModal =({setUserAnswer, inputText, setInputText, setQandA, QandA, 
         <section className="question-modal">
 
             <section>
-                <strong><p dangerouslySetInnerHTML={{__html: QandA.question}}></p></strong>
+                <strong><p dangerouslySetInnerHTML={{__html: questionAndAnswer.question}}></p></strong>
                 <hr/>
 
             </section>
@@ -70,4 +72,8 @@ const QuestionModal =({setUserAnswer, inputText, setInputText, setQandA, QandA, 
 
 }
 
-export default QuestionModal
+export  const  mapStateToProps = state => ({
+    questionAndAnswer: state.QandA
+})
+
+export default connect(mapStateToProps, { setUserAnswer })(QuestionModal);

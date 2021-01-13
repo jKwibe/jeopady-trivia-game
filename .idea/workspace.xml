@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4b5ebdd8-0ca9-48a8-bbe7-8e4f0c78ff20" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/GameFrame/GameFrame.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/GameFrame/GameFrame.js" afterDir="false" />
-    </list>
+    <list default="true" id="4b5ebdd8-0ca9-48a8-bbe7-8e4f0c78ff20" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,6 +32,10 @@
             <RecentBranchesForRepo>
               <option name="branches">
                 <list>
+                  <RecentBranch>
+                    <option name="branchName" value="implementing_redux" />
+                    <option name="lastUsedInstant" value="1610235655" />
+                  </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="second-round-2" />
                     <option name="lastUsedInstant" value="1609033481" />
@@ -294,7 +294,56 @@
       <option name="project" value="LOCAL" />
       <updated>1610230442639</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Implement redux on some state">
+      <created>1610297514759</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1610297514762</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Add reducers and Actions">
+      <created>1610297553544</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1610297553544</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Implement the user answer state in redux.">
+      <created>1610504884279</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1610504884279</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Implement the QuestionList state in redux.">
+      <created>1610507882275</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1610507882276</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Implement the Scores state in redux.">
+      <created>1610509238641</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1610509238641</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Implement the round state in redux.">
+      <created>1610511120336</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1610511120336</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Fix a rendering bug">
+      <created>1610511979598</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1610511979598</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -313,13 +362,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add Gameframe component." />
-    <MESSAGE value="Change to scss" />
-    <MESSAGE value="Add round 1 data" />
-    <MESSAGE value="Add game row data" />
-    <MESSAGE value="Add bootstrap packages" />
-    <MESSAGE value="Add game frame style" />
-    <MESSAGE value="Update gameframe data" />
     <MESSAGE value="Display question to app." />
     <MESSAGE value="Send the answer to the App" />
     <MESSAGE value="Send the Question modal" />
@@ -338,6 +380,13 @@
     <MESSAGE value="Add isDone to automatically go to the next round." />
     <MESSAGE value="make the Questions update on round change." />
     <MESSAGE value="Set the result component" />
-    <option name="LAST_COMMIT_MESSAGE" value="Set the result component" />
+    <MESSAGE value="Implement redux on some state" />
+    <MESSAGE value="Add reducers and Actions" />
+    <MESSAGE value="Implement the user answer state in redux." />
+    <MESSAGE value="Implement the QuestionList state in redux." />
+    <MESSAGE value="Implement the Scores state in redux." />
+    <MESSAGE value="Implement the round state in redux." />
+    <MESSAGE value="Fix a rendering bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix a rendering bug" />
   </component>
 </project>

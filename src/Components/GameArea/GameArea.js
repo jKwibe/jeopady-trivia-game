@@ -1,6 +1,7 @@
+import { connect } from  'react-redux'
 import GameRow from "../GameRow/GameRow";
 
-const GameArea = ({setPoints, setQandA, Questions, setRound, round, setShowModal})=>{
+const GameArea = ({Questions, setShowModal})=>{
 
     return(
         <>
@@ -11,10 +12,6 @@ const GameArea = ({setPoints, setQandA, Questions, setRound, round, setShowModal
                             return <div key={index} className="col          ">
                                 <GameRow
                                     category={cat}
-                                    setQandA={setQandA}
-                                    setPoints={setPoints}
-                                    round={round}
-                                    setRound={setRound}
                                     setShowModal={setShowModal}
                                 />
                             </div>
@@ -26,4 +23,8 @@ const GameArea = ({setPoints, setQandA, Questions, setRound, round, setShowModal
     )
 }
 
-export default GameArea;
+const  mapStateToProps = state => ({
+    Questions: state.gameQuestions
+})
+
+export default connect(mapStateToProps)(GameArea);

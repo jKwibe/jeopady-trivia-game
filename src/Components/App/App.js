@@ -1,63 +1,35 @@
-import {useEffect, useState} from 'react'
+import {useEffect} from 'react'
 
 // Import Components
 import StartButton from "../Start/Start";
 import GameFrame from "../GameFrame/GameFrame";
+import { connect } from "react-redux";
 
 import "./App.scss"
-import roundOneQuestions from "../../Questions/RoundOne";
+import {setUserAnswer, subtractScore, addScore} from "../../actions";
 
-const App = ()=>{
-    const [start, setStart] = useState(false)
-    const [points, setPoints] = useState(0)
-    const [score, setScore] = useState(0)
-    const [round, setRound] = useState(1)
-    const [QandA, setQandA] = useState({question: '', answer: ''})
-    const [userAnswer, setUserAnswer] = useState('')
-    const [questionList, setQuestionList] = useState(roundOneQuestions)
 
-    const startGame = ()=>{
-        console.log('The Game has started')
-        setStart(true)
-    }
-    console.log(round);
+const App = ({ gameStart, questionAndAnswer, questionPoints, setUserAnswer, subtractScore, addScore })=>{
 
     useEffect(() => {
-        if (userAnswer.toLowerCase() === QandA.answer.toLowerCase()) {
+        if (questionAndAnswer.userAnswer.toLowerCase() === questionAndAnswer.answer.toLowerCase() && questionAndAnswer.userAnswer !== '') {
             console.log("YOUR ANSWER IS CORRECT");
-            setScore(score + points)
+            addScore(questionPoints)
             setUserAnswer('')
         }
-        if (userAnswer.toLowerCase() !== QandA.answer.toLowerCase() && userAnswer !== '') {
+        if (questionAndAnswer.userAnswer.toLowerCase() !== questionAndAnswer.answer.toLowerCase() && questionAndAnswer.userAnswer !== '') {
             console.log("YOUR ANSWER IS WRONG");
-            setScore(score - points)
+            subtractScore(questionPoints)
             setUserAnswer('')
         }
         //eslint-disable-next-line
-    }, [score, points, QandA.answer, userAnswer])
+    }, [questionAndAnswer])
 
-
-    const render = start ? <GameFrame
-                            points={points}
-                            setPoints={setPoints}
-                            score={score}
-                            setScore={setScore}
-                            round={round}
-                            setRound={setRound}
-                            QandA={QandA}
-                            setQandA={setQandA}
-                            userAnswer={userAnswer}
-                            setUserAnswer={setUserAnswer}
-                            questionList={questionList}
-                            setQuestionList={setQuestionList}
-
-                            />
-                         : <StartButton startGame={startGame} />
-
+    const render = gameStart ? <GameFrame/> : <StartButton />
     return(
         <main
-            className={`main-app ${ start? '': 'initial-bg'} `}
-            style={start?null:{backgroundImage: `url('${process.env.PUBLIC_URL}/Jeopardy-logo.jpg')`, backgroundSize: "cover"}}
+            className={`main-app ${ gameStart? '': 'initial-bg'} `}
+            style={gameStart?null:{backgroundImage: `url('${process.env.PUBLIC_URL}/Jeopardy-logo.jpg')`, backgroundSize: "cover"}}
         >
             { render }
         </main>
@@ -65,4 +37,13 @@ const App = ()=>{
     )
 }
 
-export default App;
+const  mapStateToProps = state => {
+    console.log(state.gameScores);
+    return{
+            gameStart: state.startGame,
+            questionAndAnswer: state.QandA,
+            questionPoints: state.playerPoints
+        }
+}
+
+export default connect(mapStateToProps, {setUserAnswer,subtractScore, addScore})(App);

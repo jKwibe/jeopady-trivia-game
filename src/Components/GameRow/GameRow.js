@@ -1,7 +1,10 @@
+import { connect } from 'react-redux'
+
 import GameCell from "../GameCell/GameCell";
+import {questionPoints} from '../../actions'
 
 import "./GameRow.scss"
-const GameRow = ({category, setPoints, setQandA, round, setShowModal})=>{
+const GameRow = ({category, round, setShowModal})=>{
 
     return(
        <>
@@ -15,11 +18,8 @@ const GameRow = ({category, setPoints, setQandA, round, setShowModal})=>{
                    className="row cell-btn"
                >
                    <GameCell
-                       setQandA={setQandA}
-                       setPoints={setPoints}
                        points={points}
                        question={question}
-                       round={round}
                        setShowModal={setShowModal}
                    />
                    </section>
@@ -29,4 +29,9 @@ const GameRow = ({category, setPoints, setQandA, round, setShowModal})=>{
    )
 }
 
-export default GameRow;
+export  const  mapStateToProps = state => ({
+    QnA: state.QandA,
+    round: state.gameScores.round
+})
+
+export default connect(mapStateToProps, { questionPoints })(GameRow);
