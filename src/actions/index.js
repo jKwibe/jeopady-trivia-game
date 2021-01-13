@@ -26,3 +26,10 @@ export  const setUserAnswer = answer => {
         answer
     }
 }
+
+export const setGameQuestions = questions => {
+    return {
+        type: 'SET_ROUND_QUESTIONS',
+        questions
+    }
+}

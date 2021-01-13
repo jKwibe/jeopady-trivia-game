@@ -5,8 +5,8 @@
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/App/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/App/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/GameArea/GameArea.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/GameArea/GameArea.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/GameFrame/GameFrame.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/GameFrame/GameFrame.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/QuestionDisplay/QuestionDisplay.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/QuestionDisplay/QuestionDisplay.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/QuestionModal/QuestionModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/QuestionModal/QuestionModal.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/actions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/index.js" afterDir="false" />
@@ -317,7 +317,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610297553544</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Implement the user answer state in redux.">
+      <created>1610504884279</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1610504884279</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -336,7 +343,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add round 1 data" />
     <MESSAGE value="Add game row data" />
     <MESSAGE value="Add bootstrap packages" />
     <MESSAGE value="Add game frame style" />
@@ -361,6 +367,7 @@
     <MESSAGE value="Set the result component" />
     <MESSAGE value="Implement redux on some state" />
     <MESSAGE value="Add reducers and Actions" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add reducers and Actions" />
+    <MESSAGE value="Implement the user answer state in redux." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement the user answer state in redux." />
   </component>
 </project>

@@ -31,10 +31,20 @@ const playerPoints = (state= 0, action) => {
     }
 }
 
+const gameQuestions = (state = [], action) => {
+    switch (action.type){
+        case 'SET_ROUND_QUESTIONS':
+            return [...action.questions]
+        default:
+            return state
+    }
+}
+
 const rootReducers = combineReducers({
     startGame,
     QandA,
-    playerPoints
+    playerPoints,
+    gameQuestions
 })
 
 export default rootReducers
