@@ -3,9 +3,11 @@ import React, {useEffect, useState} from "react";
 import {ProgressBar} from 'react-bootstrap';
 import { connect } from 'react-redux';
 
+import { setUserAnswer } from "../../actions";
+
 import "./QuestionModal.scss"
 
-const QuestionModal =({questionAndAnswer, setUserAnswer, inputText, setInputText, isDone, setShowModal, setIsNextRound})=>{
+const QuestionModal =({questionAndAnswer, inputText, setInputText, isDone, setShowModal, setIsNextRound, setUserAnswer})=>{
     const [timeoutId, setTimeoutId] = useState(0)
     const [counter, setCounter] = useState(30)
 
@@ -21,7 +23,7 @@ const QuestionModal =({questionAndAnswer, setUserAnswer, inputText, setInputText
         if (counter >= 1 ){
              timeout = setTimeout(() =>{
                  setCounter(counter - 1)
-            }, 2);
+            }, 250);
         }
 
         setTimeoutId(timeout)
@@ -33,11 +35,9 @@ const QuestionModal =({questionAndAnswer, setUserAnswer, inputText, setInputText
         }
         // eslint-disable-next-line
     }, [counter, setInputText, questionAndAnswer]);
-    // console.log('The question value is '+ QandA.question)
 
     const closeModal = (timeout)=>{
         clearTimeout(timeout)
-        // setQandA({question: '', answer: QandA.answer})
         setInputText('')
         setShowModal(false)
     }
@@ -45,6 +45,7 @@ const QuestionModal =({questionAndAnswer, setUserAnswer, inputText, setInputText
 
     const handleSubmit = (event)=>{
         event.preventDefault();
+        setUserAnswer(inputText)
         setUserAnswer(inputText)
         if(isDone){
             setIsNextRound(true)
@@ -75,4 +76,4 @@ export  const  mapStateToProps = state => ({
     questionAndAnswer: state.QandA
 })
 
-export default connect(mapStateToProps)(QuestionModal);
+export default connect(mapStateToProps, { setUserAnswer })(QuestionModal);

@@ -14,7 +14,7 @@ import GameArea from "../GameArea/GameArea";
 import roundOneQuestions from "../../Questions/RoundOne";
 import roundTwoQuestions from "../../Questions/RoundTwo";
 
-const GameFrame = ({ questionAndAnswer, score, setPoints, round, setRound, setUserAnswer,questionList, setQuestionList})=> {
+const GameFrame = ({ questionAndAnswer, score, setPoints, round, setRound, questionList, setQuestionList})=> {
     const [isDone, setIsDone] = useState(false)
     const [showModal, setShowModal] = useState(false)
     const [isNextRound, setIsNextRound] = useState(false)
@@ -80,7 +80,6 @@ const GameFrame = ({ questionAndAnswer, score, setPoints, round, setRound, setUs
                 </div>}
 
                 <QuestionDisplay
-                    setUserAnswer={setUserAnswer}
                     isDone={isDone}
                     showModal={showModal}
                     setShowModal={setShowModal}

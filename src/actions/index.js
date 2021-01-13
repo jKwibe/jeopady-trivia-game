@@ -19,3 +19,10 @@ export const questionPoints = points => {
         points
     }
 }
+
+export  const setUserAnswer = answer => {
+    return {
+        type: 'SET_USER_ANSWER',
+        answer
+    }
+}

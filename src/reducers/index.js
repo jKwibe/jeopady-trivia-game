@@ -9,12 +9,16 @@ const startGame = (state= false, action) => {
     }
 }
 
-const QandA = (state={question: '', answer: ''}, action) => {
+const QandA = (state={question: '', answer: '', userAnswer: ''}, action) => {
     switch (action.type) {
         case 'Q_AND_A_PICK':
             return {...state, ...action.QnA}
+        case 'SET_USER_ANSWER':
+            return { ...state,
+                userAnswer: action.answer
+            }
         default:
-            return {question: '', answer: ''}
+            return state
     }
 }
 

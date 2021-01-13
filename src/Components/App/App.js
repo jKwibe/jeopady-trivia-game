@@ -7,38 +7,36 @@ import { connect } from "react-redux";
 
 import "./App.scss"
 import roundOneQuestions from "../../Questions/RoundOne";
+import {setUserAnswer} from "../../actions";
 
 
-const App = ({ gameStart, questionAndAnswer, questionPoints })=>{
+const App = ({ gameStart, questionAndAnswer, questionPoints, setUserAnswer })=>{
     const [score, setScore] = useState(0)
     const [round, setRound] = useState(1)
-    const [userAnswer, setUserAnswer] = useState('')
     const [questionList, setQuestionList] = useState(roundOneQuestions)
 
     console.log(round);
     console.log(questionPoints);
 
     useEffect(() => {
-        if (userAnswer.toLowerCase() === questionAndAnswer.answer.toLowerCase()) {
+        if (questionAndAnswer.userAnswer.toLowerCase() === questionAndAnswer.answer.toLowerCase()) {
             console.log("YOUR ANSWER IS CORRECT");
             setScore(score + questionPoints)
             setUserAnswer('')
         }
-        if (userAnswer.toLowerCase() !== questionAndAnswer.answer.toLowerCase() && userAnswer !== '') {
+        if (questionAndAnswer.userAnswer.toLowerCase() !== questionAndAnswer.answer.toLowerCase() && questionAndAnswer.userAnswer !== '') {
             console.log("YOUR ANSWER IS WRONG");
             setScore(score - questionPoints)
             setUserAnswer('')
         }
         //eslint-disable-next-line
-    }, [score, questionAndAnswer.answer, userAnswer])
+    }, [score, questionAndAnswer])
 
     const render = gameStart ? <GameFrame
                             score={score}
                             setScore={setScore}
                             round={round}
                             setRound={setRound}
-                            userAnswer={userAnswer}
-                            setUserAnswer={setUserAnswer}
                             questionList={questionList}
                             setQuestionList={setQuestionList}
 
@@ -57,7 +55,7 @@ const App = ({ gameStart, questionAndAnswer, questionPoints })=>{
 }
 
 const  mapStateToProps = state => {
-    console.log(state);
+    console.log(state.QandA);
     return{
             gameStart: state.startGame,
             questionAndAnswer: state.QandA,
@@ -66,4 +64,4 @@ const  mapStateToProps = state => {
 }
 
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps, {setUserAnswer})(App);
