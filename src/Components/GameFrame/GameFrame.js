@@ -20,8 +20,6 @@ const GameFrame = ({ questionAndAnswer, score, round, Questions, setGameQuestion
     const [showModal, setShowModal] = useState(false)
     const [isNextRound, setIsNextRound] = useState(false)
 
-    console.log(isDone, isNextRound, "GameFrame");
-
     useEffect(()=>{
         if(isDone && isNextRound){
             addRound()
@@ -55,19 +53,20 @@ const GameFrame = ({ questionAndAnswer, score, round, Questions, setGameQuestion
         // eslint-disable-next-line
     }, [round])
 
+    const mainGameArea = <>
+                    <div align='center' style={{color: 'white'}}>
+                        <h1>Playing Round {round}</h1>
+                    </div>
+                    <GameArea setShowModal={setShowModal}/>
+                 </>
+
     return (
         <>
             <Header/>
-            {Questions.length > 0 &&
-            <div align='center' style={{color: 'white'}}>
-                <h1>Playing Round {round}</h1>
-            </div>}
-
             <section className="main-game-frame">
-                {Questions.length > 0 &&
-                <GameArea
-                    setShowModal={setShowModal}
-                />}
+
+                { Questions.length > 0 && mainGameArea }
+
                 {Questions.length === 0 &&
                 <div align='center' style={{color: 'white'}}>
                     <h1>THANKS FOR PLAYING!!!</h1>
