@@ -8,7 +8,10 @@ import {
     ADD_SCORE,
     SET_ROUND_QUESTIONS,
     SET_USER_ANSWER,
-    SUBTRACT_SCORE
+    SUBTRACT_SCORE,
+    IS_NEXT_ROUND,
+    IS_DONE,
+    SHOW_MODEL
 } from "../actions";
 
 const startGame = (state= false, action) => {
@@ -73,12 +76,35 @@ const gameScores = (state = { score: 0, round: 1 }, action) => {
     }
 }
 
+const questionDisplayModalControl = (state = { isDone: false, isNextRound: false, showModel: false} , action) => {
+    switch (action.type) {
+        case IS_DONE:
+            return {
+                ...state,
+                isDone: action.isDone
+            }
+        case IS_NEXT_ROUND:
+            return {
+                ...state,
+                isNextRound: action.isNext
+            }
+        case SHOW_MODEL:
+            return {
+                ...state,
+                showModel: action.show
+            }
+        default:
+            return state
+    }
+}
+
 const rootReducers = combineReducers({
     startGame,
     QandA,
     playerPoints,
     gameQuestions,
-    gameScores
+    gameScores,
+    questionDisplayModalControl
 })
 
 export default rootReducers

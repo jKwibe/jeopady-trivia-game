@@ -2,10 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b5ebdd8-0ca9-48a8-bbe7-8e4f0c78ff20" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Components/Resullts/Results.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/App/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/App/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/GameFrame/GameFrame.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/GameFrame/GameFrame.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/QuestionModal/QuestionModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/QuestionModal/QuestionModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +129,9 @@
       <workItem from="1608844061155" duration="3915000" />
       <workItem from="1610155021714" duration="3629000" />
       <workItem from="1610163319657" duration="5850000" />
-      <workItem from="1610556021885" duration="882000" />
+      <workItem from="1610556021885" duration="4603000" />
+      <workItem from="1610588669132" duration="480000" />
+      <workItem from="1610596759346" duration="712000" />
     </task>
     <task id="LOCAL-00001" summary="Add Gameframe component.">
       <created>1608334622641</created>
@@ -356,7 +364,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610512252256</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Add results component">
+      <created>1610557284641</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1610557284641</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -375,7 +390,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Send the answer to the App" />
     <MESSAGE value="Send the Question modal" />
     <MESSAGE value="The modal disappears after clicking submit." />
     <MESSAGE value="Make the timer to track the user input" />
@@ -400,6 +414,7 @@
     <MESSAGE value="Implement the round state in redux." />
     <MESSAGE value="Fix a rendering bug" />
     <MESSAGE value="Remove comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove comments" />
+    <MESSAGE value="Add results component" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add results component" />
   </component>
 </project>

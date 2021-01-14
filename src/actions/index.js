@@ -8,6 +8,9 @@ export const SET_ROUND_QUESTIONS = 'SET_ROUND_QUESTIONS'
 export const ADD_SCORE = 'ADD_SCORE'
 export const SUBTRACT_SCORE = 'SUBTRACT_SCORE'
 export const ADD_ROUND = 'ADD_ROUND'
+export const IS_DONE = 'IS_DONE'
+export const SHOW_MODEL = 'SHOW_MODEL'
+export const IS_NEXT_ROUND = 'IS_NEXT_ROUND'
 
 // Action Creator
 export const  startGame = () => {
@@ -61,5 +64,26 @@ export  const subtractScore = points => {
 export  const addRound = () => {
     return {
         type: ADD_ROUND
+    }
+}
+
+export  const allButtonsClicked = isDone => {
+    return {
+        type: IS_DONE,
+        isDone
+    }
+}
+
+export  const showQuestionModel = show => {
+    return {
+        type: SHOW_MODEL,
+        show
+    }
+}
+
+export  const isNextRound2 = isNext => {
+    return {
+        type: IS_NEXT_ROUND,
+        isNext
     }
 }

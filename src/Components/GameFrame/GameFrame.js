@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { connect } from 'react-redux';
 
-import { setGameQuestions, addRound } from "../../actions";
+import { setGameQuestions, addRound, allButtonsClicked, showQuestionModel, isNextRound2 } from "../../actions";
 import QuestionDisplay from "../QuestionDisplay/QuestionDisplay";
 
 // css
@@ -16,7 +16,7 @@ import roundOneQuestions from "../../Questions/RoundOne";
 import roundTwoQuestions from "../../Questions/RoundTwo";
 import Results from "../Resullts/Results";
 
-const GameFrame = ({ questionAndAnswer, round, Questions, setGameQuestions, addRound })=> {
+const GameFrame = ({ questionAndAnswer, round, Questions, setGameQuestions, addRound, allButtonsClicked, showQuestionModel, isNextRound2 })=> {
     const [isDone, setIsDone] = useState(false)
     const [showModal, setShowModal] = useState(false)
     const [isNextRound, setIsNextRound] = useState(false)
@@ -24,6 +24,7 @@ const GameFrame = ({ questionAndAnswer, round, Questions, setGameQuestions, addR
     useEffect(()=>{
         if(isDone && isNextRound){
             addRound()
+            allButtonsClicked(true)
             setIsDone(false)
         }
         // eslint-disable-next-line
@@ -89,4 +90,4 @@ const  mapStateToProps = state => ({
     round: state.gameScores.round
 })
 
-export default connect(mapStateToProps, { setGameQuestions, addRound })(GameFrame);
+export default connect(mapStateToProps, { setGameQuestions, addRound, allButtonsClicked, showQuestionModel, isNextRound2 })(GameFrame);
