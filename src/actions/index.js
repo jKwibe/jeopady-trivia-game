@@ -1,55 +1,89 @@
+// Actions
+
+export const GAME_STARTER = 'GAME_STARTED'
+export const QUESTION_AND_ANSWER_PICK = 'QUESTION_AND_ANSWER_PICK'
+export const SET_GAME_POINTS = 'SET_POINTS'
+export const SET_USER_ANSWER = 'SET_USER_ANSWER'
+export const SET_ROUND_QUESTIONS = 'SET_ROUND_QUESTIONS'
+export const ADD_SCORE = 'ADD_SCORE'
+export const SUBTRACT_SCORE = 'SUBTRACT_SCORE'
+export const ADD_ROUND = 'ADD_ROUND'
+export const IS_DONE = 'IS_DONE'
+export const SHOW_MODEL = 'SHOW_MODEL'
+export const IS_NEXT_ROUND = 'IS_NEXT_ROUND'
 
 // Action Creator
 export const  startGame = () => {
     return {
-        type: 'GAME_STARTED'
+        type: GAME_STARTER
     }
 }
 
 export const questionNAnswer = QnA => {
     return {
-        type: 'Q_AND_A_PICK',
+        type: QUESTION_AND_ANSWER_PICK,
         QnA
     }
 }
 
 export const questionPoints = points => {
     return {
-        type: 'SET_POINTS',
+        type: SET_GAME_POINTS,
         points
     }
 }
 
 export  const setUserAnswer = answer => {
     return {
-        type: 'SET_USER_ANSWER',
+        type: SET_USER_ANSWER,
         answer
     }
 }
 
 export const setGameQuestions = questions => {
     return {
-        type: 'SET_ROUND_QUESTIONS',
+        type: SET_ROUND_QUESTIONS,
         questions
     }
 }
 
 export  const addScore = points => {
     return {
-        type: 'ADD_SCORE',
+        type: ADD_SCORE,
         points
     }
 }
 
 export  const subtractScore = points => {
     return {
-        type: 'SUBTRACT_SCORE',
+        type: SUBTRACT_SCORE,
         points
     }
 }
 
 export  const addRound = () => {
     return {
-        type: 'ADD_ROUND'
+        type: ADD_ROUND
+    }
+}
+
+export  const allButtonsClicked = isDone => {
+    return {
+        type: IS_DONE,
+        isDone
+    }
+}
+
+export  const showQuestionModel = show => {
+    return {
+        type: SHOW_MODEL,
+        show
+    }
+}
+
+export  const isNextRound2 = isNext => {
+    return {
+        type: IS_NEXT_ROUND,
+        isNext
     }
 }

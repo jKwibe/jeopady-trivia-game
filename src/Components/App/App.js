@@ -38,7 +38,7 @@ const App = ({ gameStart, questionAndAnswer, questionPoints, setUserAnswer, subt
 }
 
 const  mapStateToProps = state => {
-    console.log(state.gameScores);
+    console.log(state.questionDisplayModalControl);
     return{
             gameStart: state.startGame,
             questionAndAnswer: state.QandA,

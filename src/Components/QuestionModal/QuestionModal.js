@@ -1,6 +1,6 @@
 import AnswerSubmit from "../AnswerSubmit/AnswerSubmit";
-import React, {useEffect, useState} from "react";
-import {ProgressBar} from 'react-bootstrap';
+import React, { useEffect, useState } from "react";
+import { ProgressBar } from 'react-bootstrap';
 import { connect } from 'react-redux';
 
 import { setUserAnswer } from "../../actions";
