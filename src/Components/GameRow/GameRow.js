@@ -1,15 +1,15 @@
 import { connect } from 'react-redux'
 
 import GameCell from "../GameCell/GameCell";
-import {questionPoints} from '../../actions'
+import { questionPoints } from '../../actions'
 
 import "./GameRow.scss"
-const GameRow = ({category, round, setShowModal})=>{
+const GameRow = ({ category, round })=>{
 
     return(
        <>
            <section className="row category">
-               <h6><strong>{category.category}</strong></h6>
+               <h6><strong>{ category.category }</strong></h6>
            </section>
            { category.questions.map((question, index)=>{
                let points = ((index + 1)*round)*100;
@@ -18,19 +18,16 @@ const GameRow = ({category, round, setShowModal})=>{
                    className="row cell-btn"
                >
                    <GameCell
-                       points={points}
-                       question={question}
-                       setShowModal={setShowModal}
+                       points={ points }
+                       question={ question }
                    />
                    </section>
            })}
-
        </>
    )
 }
 
-export  const  mapStateToProps = state => ({
-    QnA: state.QandA,
+const  mapStateToProps = state => ({
     round: state.gameScores.round
 })
 

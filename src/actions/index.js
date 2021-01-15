@@ -81,7 +81,7 @@ export  const showQuestionModel = show => {
     }
 }
 
-export  const isNextRound2 = isNext => {
+export  const isNextRound = isNext => {
     return {
         type: IS_NEXT_ROUND,
         isNext

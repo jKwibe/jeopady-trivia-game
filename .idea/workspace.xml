@@ -4,14 +4,18 @@
     <list default="true" id="4b5ebdd8-0ca9-48a8-bbe7-8e4f0c78ff20" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/AnswerSubmit/AnswerSubmit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/AnswerSubmit/AnswerSubmit.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/App/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/App/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/GameArea/GameArea.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/GameArea/GameArea.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/GameCell/GameCell.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/GameCell/GameCell.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/GameFrame/GameFrame.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/GameFrame/GameFrame.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/GameRow/GameRow.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/GameRow/GameRow.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Header/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/QuestionDisplay/QuestionDisplay.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/QuestionDisplay/QuestionDisplay.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/QuestionModal/QuestionModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/QuestionModal/QuestionModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Resullts/Results.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Resullts/Results.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Start/Start.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Start/Start.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/actions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,12 +84,14 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.google.cloudcode.ide_session_index" value="20210115_0001" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -131,7 +137,10 @@
       <workItem from="1610163319657" duration="5850000" />
       <workItem from="1610556021885" duration="4603000" />
       <workItem from="1610588669132" duration="480000" />
-      <workItem from="1610596759346" duration="712000" />
+      <workItem from="1610596759346" duration="1751000" />
+      <workItem from="1610679228799" duration="156000" />
+      <workItem from="1610747404448" duration="92000" />
+      <workItem from="1610747519704" duration="4079000" />
     </task>
     <task id="LOCAL-00001" summary="Add Gameframe component.">
       <created>1608334622641</created>
@@ -371,7 +380,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610557284641</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Add model state to redux store and add redux dev tool">
+      <created>1610598171771</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1610598171771</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -390,7 +406,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Send the Question modal" />
     <MESSAGE value="The modal disappears after clicking submit." />
     <MESSAGE value="Make the timer to track the user input" />
     <MESSAGE value="Timer and submit working correctly" />
@@ -415,6 +430,7 @@
     <MESSAGE value="Fix a rendering bug" />
     <MESSAGE value="Remove comments" />
     <MESSAGE value="Add results component" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add results component" />
+    <MESSAGE value="Add model state to redux store and add redux dev tool" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add model state to redux store and add redux dev tool" />
   </component>
 </project>
