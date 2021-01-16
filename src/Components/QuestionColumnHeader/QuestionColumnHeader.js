@@ -21,5 +21,3 @@ const mapPropsToState = state => ({
 })
 
 export default connect(mapPropsToState)(QuestionColumnHeader)
-
-let mess = { them: 'a', they:'b'}
