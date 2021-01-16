@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { connect } from 'react-redux';
 
 // Import state
-import { setGameQuestions, addRound, allButtonsClicked, showQuestionModel, isNextRound } from "../../actions";
+import { setGameQuestions, addRound, allButtonsClicked, showQuestionModel } from "../../actions";
 
 // css
 import "./GameFrame.scss"
@@ -18,14 +18,14 @@ import QuestionDisplay from "../QuestionDisplay/QuestionDisplay";
 import roundOneQuestions from "../../Questions/RoundOne";
 import roundTwoQuestions from "../../Questions/RoundTwo";
 
-const GameFrame = ({ questionAndAnswer, round, Questions, setGameQuestions, addRound, allButtonsClicked, isNextRound, isDone })=> {
+const GameFrame = ({ questionAndAnswer, round, Questions, setGameQuestions, addRound, allButtonsClicked, nextRound, isDone })=> {
     useEffect(()=>{
-        if(isDone && isNextRound){
+        if(isDone && nextRound){
             addRound()
             allButtonsClicked(false)
         }
         // eslint-disable-next-line
-    }, [isNextRound])
+    }, [nextRound])
 
     useEffect(()=>{
         let buttons = document.querySelectorAll('.row.cell-btn')
@@ -78,8 +78,8 @@ const  mapStateToProps = state => ({
     Questions: state.gameQuestions,
     score: state.gameScores.score,
     round: state.gameScores.round,
-    isNextRound: state.questionDisplayModalControl.isNextRound,
+    nextRound: state.questionDisplayModalControl.isNextRound,
     isDone: state.questionDisplayModalControl.isDone
 })
 
-export default connect(mapStateToProps, { setGameQuestions, addRound, allButtonsClicked, showQuestionModel, isNextRound })(GameFrame);
+export default connect(mapStateToProps, { setGameQuestions, addRound, allButtonsClicked, showQuestionModel })(GameFrame);

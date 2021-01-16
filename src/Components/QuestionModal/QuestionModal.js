@@ -23,15 +23,16 @@ const QuestionModal =({ questionAndAnswer, inputText, setInputText, isDone, isNe
         if (counter >= 1 ){
              timeout = setTimeout(() =>{
                  setCounter(counter - 1)
-            }, 250);
+            }, 750);
+        }else {
+            setInputText('')
+            showQuestionModel(false)
         }
 
         setTimeoutId(timeout)
 
         return ()=> {
-            if (counter === 1){
-                closeModal(timeout)
-            }
+            clearTimeout(timeout)
         }
         // eslint-disable-next-line
     }, [counter, setInputText, questionAndAnswer]);
@@ -44,6 +45,7 @@ const QuestionModal =({ questionAndAnswer, inputText, setInputText, isDone, isNe
 
     const handleSubmit = (event)=>{
         event.preventDefault();
+        clearTimeout(timeoutId)
         setUserAnswer(inputText)
         setUserAnswer(inputText)
         if(isDone){
@@ -56,6 +58,7 @@ const QuestionModal =({ questionAndAnswer, inputText, setInputText, isDone, isNe
         <section className='question-modal'>
 
             <section>
+                { counter }
                 <strong><p dangerouslySetInnerHTML={{__html: questionAndAnswer.question}}></p></strong>
                 <hr/>
 

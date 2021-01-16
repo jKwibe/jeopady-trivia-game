@@ -37,10 +37,12 @@ const App = ({ gameStart, questionAndAnswer, questionPoints, setUserAnswer, subt
     )
 }
 
-const  mapStateToProps = state => ({
+const  mapStateToProps = state => {
+    console.log(state.questionDisplayModalControl);
+    return {
     gameStart: state.startGame,
     questionAndAnswer: state.QandA,
     questionPoints: state.playerPoints
-})
+}}
 
 export default connect(mapStateToProps, { setUserAnswer, subtractScore, addScore })(App);
