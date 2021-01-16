@@ -1,18 +1,19 @@
 import { connect } from  'react-redux'
 import GameRow from "../GameRow/GameRow";
+import QuestionColumnHeader from "../QuestionColumnHeader/QuestionColumnHeader";
 
-const GameArea = ({Questions, setShowModal})=>{
+const GameArea = ({ Questions })=>{
 
     return(
         <>
             <section className="game-main-section container">
                 <div className="game-area">
+                    <QuestionColumnHeader/>
                     <section className="row">
-                        { Questions.map((cat,index)=>{
-                            return <div key={index} className="col          ">
+                        { Questions.map((category,index)=>{
+                            return <div key={index} className="col">
                                 <GameRow
-                                    category={cat}
-                                    setShowModal={setShowModal}
+                                    category={ category }
                                 />
                             </div>
                         })}

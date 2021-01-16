@@ -1,12 +1,13 @@
-import {useEffect, useState} from "react";
-import {Button} from "react-bootstrap";
+import { useEffect, useState } from "react";
+import { Button } from "react-bootstrap";
 import { connect } from 'react-redux'
 
-import { questionNAnswer, questionPoints } from "../../actions";
+import { questionNAnswer, questionPoints, showQuestionModel } from "../../actions";
 
 
-const GameCell = ({ points, question, questionPoints, round, setShowModal, questionNAnswer}) => {
+const GameCell = ({ points, question, questionPoints, round, showQuestionModel, questionNAnswer }) => {
     const [disable, setDisable] = useState(false)
+
     useEffect(()=>{
         return ()=>{
             setDisable(false)
@@ -17,8 +18,9 @@ const GameCell = ({ points, question, questionPoints, round, setShowModal, quest
         questionPoints(points)
         questionNAnswer(question)
         setDisable(true)
-        setShowModal(true)
+        showQuestionModel(true)
     }
+
     return(
         <>
             <Button
@@ -33,8 +35,7 @@ const GameCell = ({ points, question, questionPoints, round, setShowModal, quest
 }
 
 export  const  mapStateToProps = state => ({
-    QnA: state.QandA,
     round: state.gameScores.round
 })
 
-export default connect(mapStateToProps, { questionPoints , questionNAnswer})(GameCell);
+export default connect(mapStateToProps, { questionPoints , questionNAnswer, showQuestionModel })(GameCell);

@@ -1,7 +1,7 @@
 import "./Header.scss"
-import {connect} from "react-redux";
+import { connect } from "react-redux";
 
-const Header = ({score}) => {
+const Header = ({ score }) => {
 
     return(
         <header className="main-header">
@@ -9,7 +9,7 @@ const Header = ({score}) => {
                 Jeopardy <br/> Trivia
             </div>
             <nav className="navbar">
-                <h6>Your Score is <span>{score}</span></h6>
+                <h6>Your Score is <span>{ score }</span></h6>
             </nav>
         </header>
     )
