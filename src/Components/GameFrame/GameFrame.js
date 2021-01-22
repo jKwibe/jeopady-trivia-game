@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { connect } from 'react-redux';
 
 // Import state
-import { setGameQuestions, addRound, allButtonsClicked, showQuestionModel } from "../../actions";
+import { setGameQuestions, addRound, allButtonsClicked, showQuestionModel, roundQuestions } from "../../actions";
 
 // css
 import "./GameFrame.scss"
@@ -18,7 +18,7 @@ import QuestionDisplay from "../QuestionDisplay/QuestionDisplay";
 import roundOneQuestions from "../../Questions/RoundOne";
 import roundTwoQuestions from "../../Questions/RoundTwo";
 
-const GameFrame = ({ questionAndAnswer, round, Questions, setGameQuestions, addRound, allButtonsClicked, nextRound, isDone })=> {
+const GameFrame = ({ questionAndAnswer, round, Questions, setGameQuestions, addRound, allButtonsClicked, nextRound, isDone, roundQuestions  })=> {
     useEffect(()=>{
         if(isDone && nextRound){
             addRound()
@@ -40,9 +40,11 @@ const GameFrame = ({ questionAndAnswer, round, Questions, setGameQuestions, addR
     useEffect(()=>{
         switch (round) {
             case 1:
+                roundQuestions([9, 12, 15, 20, 32])
                 setGameQuestions(roundOneQuestions)
                 break;
             case 2:
+                roundQuestions([19, 14, 22, 21, 28])
                 setGameQuestions(roundTwoQuestions)
                 break;
             default:
@@ -82,4 +84,4 @@ const  mapStateToProps = state => ({
     isDone: state.questionDisplayModalControl.isDone
 })
 
-export default connect(mapStateToProps, { setGameQuestions, addRound, allButtonsClicked, showQuestionModel })(GameFrame);
+export default connect(mapStateToProps, { setGameQuestions, addRound, allButtonsClicked, showQuestionModel, roundQuestions  })(GameFrame);

@@ -31,13 +31,7 @@ const fetchApi = async (category) => {
 }
 
 const configureApi = secArr => {
-    let d =secArr.map( section => {
-        return fetchApi(section);
-    });
-    Promise.all(d).then(values => {
-        console.log(values);
-        return values;
-    });
+    return secArr.map( section => fetchApi(section));
 }
 
 export default configureApi;

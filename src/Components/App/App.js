@@ -8,7 +8,6 @@ import { connect } from "react-redux";
 import "./App.scss"
 import {setUserAnswer, subtractScore, addScore} from "../../actions";
 
-
 const App = ({ gameStart, questionAndAnswer, questionPoints, setUserAnswer, subtractScore, addScore })=>{
 
     useEffect(() => {

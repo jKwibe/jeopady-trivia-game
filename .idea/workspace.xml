@@ -2,16 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b5ebdd8-0ca9-48a8-bbe7-8e4f0c78ff20" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/api/apiCalls.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/reducers/apiState.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reducers/gameState.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/App/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/App/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/GameFrame/GameFrame.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/GameFrame/GameFrame.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/actions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/apiCalls.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/apiCalls.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -421,7 +419,35 @@
       <option name="project" value="LOCAL" />
       <updated>1611340600886</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Update reducers">
+      <created>1611350937032</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1611350937032</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Update reducers">
+      <created>1611350964761</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1611350964761</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Add axios">
+      <created>1611350979403</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1611350979403</updated>
+    </task>
+    <task id="LOCAL-00044" summary="API call">
+      <created>1611351001127</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1611351001127</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -440,9 +466,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Clean workspace" />
-    <MESSAGE value="Disable the button when pressed." />
-    <MESSAGE value="Style the modal" />
     <MESSAGE value="Style the boxes." />
     <MESSAGE value="Add the Header Component." />
     <MESSAGE value="Add more color and styling." />
@@ -465,6 +488,9 @@
     <MESSAGE value="Add question topic component" />
     <MESSAGE value="Fix the error after modal exits." />
     <MESSAGE value="Setting up thunk" />
-    <option name="LAST_COMMIT_MESSAGE" value="Setting up thunk" />
+    <MESSAGE value="Update reducers" />
+    <MESSAGE value="Add axios" />
+    <MESSAGE value="API call" />
+    <option name="LAST_COMMIT_MESSAGE" value="API call" />
   </component>
 </project>
