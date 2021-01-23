@@ -14,7 +14,7 @@ import GameArea from "../GameArea/GameArea";
 import Results from "../Resullts/Results";
 import QuestionDisplay from "../QuestionDisplay/QuestionDisplay";
 
-const GameFrame = ({ questionAndAnswer, round, Questions, addRound, allButtonsClicked, nextRound, isDone  })=> {
+const GameFrame = ({ questionAndAnswer, round, Questions, addRound, allButtonsClicked, nextRound, isDone })=> {
     useEffect(()=>{
         if(isDone && nextRound){
             addRound()
