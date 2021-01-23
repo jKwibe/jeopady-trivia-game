@@ -1,3 +1,4 @@
+import configureApi from "../api/apiCalls";
 // Actions
 
 export const GAME_STARTER = 'GAME_STARTED'
@@ -37,13 +38,6 @@ export  const setUserAnswer = answer => {
     return {
         type: SET_USER_ANSWER,
         answer
-    }
-}
-
-export const setGameQuestions = questions => {
-    return {
-        type: SET_ROUND_QUESTIONS,
-        questions
     }
 }
 
@@ -87,3 +81,15 @@ export  const isNextRound = isNext => {
         isNext
     }
 }
+
+export const setGameQuestions = secArr => async (dispatch) => {
+    let questions = await Promise.all(configureApi(secArr))
+    console.log(questions)
+    dispatch({
+        type: SET_ROUND_QUESTIONS,
+        questions
+    })
+}
+
+
+

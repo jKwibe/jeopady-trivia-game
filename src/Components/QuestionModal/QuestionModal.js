@@ -9,7 +9,7 @@ import './QuestionModal.scss'
 
 const QuestionModal =({ questionAndAnswer, inputText, setInputText, isDone, isNextRound, setUserAnswer,showQuestionModel })=>{
     const [timeoutId, setTimeoutId] = useState(0)
-    const [counter, setCounter] = useState(30)
+    const [counter, setCounter] = useState(60)
 
     useEffect(()=>{
         isNextRound(false)
@@ -23,7 +23,7 @@ const QuestionModal =({ questionAndAnswer, inputText, setInputText, isDone, isNe
         if (counter >= 1 ){
              timeout = setTimeout(() =>{
                  setCounter(counter - 1)
-            }, 750);
+            }, 300);
         }else {
             setInputText('')
             showQuestionModel(false)
@@ -58,7 +58,6 @@ const QuestionModal =({ questionAndAnswer, inputText, setInputText, isDone, isNe
         <section className='question-modal'>
 
             <section>
-                { counter }
                 <strong><p dangerouslySetInnerHTML={{__html: questionAndAnswer.question}}></p></strong>
                 <hr/>
 
@@ -68,7 +67,7 @@ const QuestionModal =({ questionAndAnswer, inputText, setInputText, isDone, isNe
                 inputText={ inputText }
                 setInputText={ setInputText }
             />
-            <ProgressBar className='time-counter' now={ counter } max={ 30 } />
+            <ProgressBar className='time-counter' now={ counter } max={ 60 } />
         </section>
     )
 }

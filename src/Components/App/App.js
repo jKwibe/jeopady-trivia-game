@@ -6,10 +6,42 @@ import GameFrame from "../GameFrame/GameFrame";
 import { connect } from "react-redux";
 
 import "./App.scss"
-import {setUserAnswer, subtractScore, addScore} from "../../actions";
+import {setUserAnswer, subtractScore, addScore, setGameQuestions} from "../../actions";
 
+const App = ({ gameStart, questionAndAnswer, questionPoints, setUserAnswer, subtractScore, addScore, setGameQuestions, round })=>{
 
-const App = ({ gameStart, questionAndAnswer, questionPoints, setUserAnswer, subtractScore, addScore })=>{
+    const range = (start=9, end=32) => {
+        if (start === end) return [start];
+        return [start, ...range(start + 1, end)]
+    }
+
+    const sample = (arr, num =4) => {
+        let data = [];
+        for(let i=0; data.length < num; i++){
+            let index = Math.floor(Math.random() * arr.length)
+            if (data.indexOf(arr[index]) >= 0) {
+                console.log('Duplicate values noted');
+            } else{
+                data.push(arr[index])
+            }
+        }
+        return data
+    }
+
+    useEffect(()=>{
+        let sectionIdArr = sample(range());
+        switch (round) {
+            case 1:
+                setGameQuestions(sectionIdArr)
+                break;
+            case 2:
+                setGameQuestions(sectionIdArr)
+                break;
+            default:
+                setGameQuestions([])
+        }
+        // eslint-disable-next-line
+    }, [round])
 
     useEffect(() => {
         if (questionAndAnswer.userAnswer.toLowerCase() === questionAndAnswer.answer.toLowerCase() && questionAndAnswer.userAnswer !== '') {
@@ -38,11 +70,11 @@ const App = ({ gameStart, questionAndAnswer, questionPoints, setUserAnswer, subt
 }
 
 const  mapStateToProps = state => {
-    console.log(state.questionDisplayModalControl);
     return {
     gameStart: state.startGame,
     questionAndAnswer: state.QandA,
-    questionPoints: state.playerPoints
+    questionPoints: state.playerPoints,
+    round: state.gameScores.round
 }}
 
-export default connect(mapStateToProps, { setUserAnswer, subtractScore, addScore })(App);
+export default connect(mapStateToProps, { setUserAnswer, subtractScore, addScore, setGameQuestions })(App);

@@ -2,16 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b5ebdd8-0ca9-48a8-bbe7-8e4f0c78ff20" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Components/QuestionColumnHeader/QuestionColumnHeader.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/QuestionColumnHeader/QuestionHeader.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/App/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/App/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/GameArea/GameArea.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/GameArea/GameArea.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/GameFrame/GameFrame.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/GameFrame/GameFrame.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/GameRow/GameRow.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/GameRow/GameRow.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/GameRow/GameRow.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/GameRow/GameRow.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/QuestionModal/QuestionModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/QuestionModal/QuestionModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/apiCalls.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/apiCalls.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/apiState.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/apiState.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/gameState.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/gameState.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +20,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="SCSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -80,7 +79,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.google.cloudcode.ide_session_index" value="20210115_0001" />
+    <property name="com.google.cloudcode.ide_session_index" value="20210122_0000" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -92,10 +91,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/Store" />
       <recent name="$PROJECT_DIR$/src/Components" />
       <recent name="$PROJECT_DIR$/public" />
-      <recent name="$PROJECT_DIR$/src/assets" />
-      <recent name="$PROJECT_DIR$/src/Components/App" />
     </key>
   </component>
   <component name="RunManager" selected="npm.npm start">
@@ -136,7 +136,9 @@
       <workItem from="1610596759346" duration="1751000" />
       <workItem from="1610679228799" duration="156000" />
       <workItem from="1610747404448" duration="92000" />
-      <workItem from="1610747519704" duration="9457000" />
+      <workItem from="1610747519704" duration="10526000" />
+      <workItem from="1610778321599" duration="9000" />
+      <workItem from="1611337293829" duration="312000" />
     </task>
     <task id="LOCAL-00001" summary="Add Gameframe component.">
       <created>1608334622641</created>
@@ -390,7 +392,70 @@
       <option name="project" value="LOCAL" />
       <updated>1610753282073</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Add question topic component">
+      <created>1610767133023</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1610767133025</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Fix the error after modal exits.">
+      <created>1610767188383</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1610767188383</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Fix the error after modal exits.">
+      <created>1610767582761</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1610767582761</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Setting up thunk">
+      <created>1611340600885</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1611340600886</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Update reducers">
+      <created>1611350937032</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1611350937032</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Update reducers">
+      <created>1611350964761</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1611350964761</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Add axios">
+      <created>1611350979403</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1611350979403</updated>
+    </task>
+    <task id="LOCAL-00044" summary="API call">
+      <created>1611351001127</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1611351001127</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Get data from the API">
+      <created>1611354315625</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1611354315625</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -409,13 +474,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Make the timer to track the user input" />
-    <MESSAGE value="Timer and submit working correctly" />
-    <MESSAGE value="ADd logic to calculate score" />
-    <MESSAGE value="Clean workspace" />
-    <MESSAGE value="Disable the button when pressed." />
-    <MESSAGE value="Style the modal" />
-    <MESSAGE value="Style the boxes." />
     <MESSAGE value="Add the Header Component." />
     <MESSAGE value="Add more color and styling." />
     <MESSAGE value="Add background." />
@@ -434,6 +492,13 @@
     <MESSAGE value="Add results component" />
     <MESSAGE value="Add model state to redux store and add redux dev tool" />
     <MESSAGE value="Clean the code." />
-    <option name="LAST_COMMIT_MESSAGE" value="Clean the code." />
+    <MESSAGE value="Add question topic component" />
+    <MESSAGE value="Fix the error after modal exits." />
+    <MESSAGE value="Setting up thunk" />
+    <MESSAGE value="Update reducers" />
+    <MESSAGE value="Add axios" />
+    <MESSAGE value="API call" />
+    <MESSAGE value="Get data from the API" />
+    <option name="LAST_COMMIT_MESSAGE" value="Get data from the API" />
   </component>
 </project>
