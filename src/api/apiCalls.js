@@ -1,11 +1,11 @@
 import axios from "axios";
 
 const fetchApi = async (category) => {
+    console.log('called API');
     const res = await axios.get('https://opentdb.com/api.php', {
         params: {
             amount: 5,
             category,
-            difficulty: 'medium',
             type: 'multiple'
         }
     });

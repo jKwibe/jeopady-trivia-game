@@ -1,4 +1,3 @@
-import axios from "axios";
 import configureApi from "../api/apiCalls";
 // Actions
 
@@ -13,8 +12,6 @@ export const ADD_ROUND = 'ADD_ROUND'
 export const IS_DONE = 'IS_DONE'
 export const SHOW_MODEL = 'SHOW_MODEL'
 export const IS_NEXT_ROUND = 'IS_NEXT_ROUND'
-
-export const FETCH_API = 'FETCH_API'
 
 // Action Creator
 export const  startGame = () => {
@@ -41,13 +38,6 @@ export  const setUserAnswer = answer => {
     return {
         type: SET_USER_ANSWER,
         answer
-    }
-}
-
-export const setGameQuestions = questions => {
-    return {
-        type: SET_ROUND_QUESTIONS,
-        questions
     }
 }
 
@@ -92,13 +82,14 @@ export  const isNextRound = isNext => {
     }
 }
 
-export const roundQuestions = secArr => async (dispatch) => {
+export const setGameQuestions = secArr => async (dispatch) => {
     let questions = await Promise.all(configureApi(secArr))
     console.log(questions)
     dispatch({
-        type: FETCH_API,
+        type: SET_ROUND_QUESTIONS,
         questions
     })
 }
+
 
 

@@ -1,8 +1,8 @@
-import {FETCH_API} from "../actions";
+import {SET_ROUND_QUESTIONS} from "../actions";
 
-export const getApiQuestions = (state= [], action) => {
+export const gameQuestions = (state= [], action) => {
     switch (action.type){
-        case FETCH_API:
+        case SET_ROUND_QUESTIONS:
             return action.questions
         default:
             return state

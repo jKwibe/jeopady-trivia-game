@@ -4,7 +4,6 @@ import {
     GAME_STARTER,
     ADD_ROUND,
     ADD_SCORE,
-    SET_ROUND_QUESTIONS,
     SET_USER_ANSWER,
     SUBTRACT_SCORE,
     IS_NEXT_ROUND,
@@ -38,15 +37,6 @@ export const playerPoints = (state= 0, action) => {
     switch (action.type) {
         case SET_GAME_POINTS:
             return action.points
-        default:
-            return state
-    }
-}
-
-export const gameQuestions = (state = [], action) => {
-    switch (action.type){
-        case SET_ROUND_QUESTIONS:
-            return [...action.questions]
         default:
             return state
     }

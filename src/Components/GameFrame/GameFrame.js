@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { connect } from 'react-redux';
 
 // Import state
-import { setGameQuestions, addRound, allButtonsClicked, showQuestionModel, roundQuestions } from "../../actions";
+import { addRound, allButtonsClicked, showQuestionModel } from "../../actions";
 
 // css
 import "./GameFrame.scss"
@@ -14,11 +14,7 @@ import GameArea from "../GameArea/GameArea";
 import Results from "../Resullts/Results";
 import QuestionDisplay from "../QuestionDisplay/QuestionDisplay";
 
-// Import data
-import roundOneQuestions from "../../Questions/RoundOne";
-import roundTwoQuestions from "../../Questions/RoundTwo";
-
-const GameFrame = ({ questionAndAnswer, round, Questions, setGameQuestions, addRound, allButtonsClicked, nextRound, isDone, roundQuestions  })=> {
+const GameFrame = ({ questionAndAnswer, round, Questions, addRound, allButtonsClicked, nextRound, isDone  })=> {
     useEffect(()=>{
         if(isDone && nextRound){
             addRound()
@@ -36,22 +32,6 @@ const GameFrame = ({ questionAndAnswer, round, Questions, setGameQuestions, addR
         allButtonsClicked(isAllDisabled);
         // eslint-disable-next-line
     }, [questionAndAnswer])
-
-    useEffect(()=>{
-        switch (round) {
-            case 1:
-                roundQuestions([9, 12, 15, 20, 32])
-                setGameQuestions(roundOneQuestions)
-                break;
-            case 2:
-                roundQuestions([19, 14, 22, 21, 28])
-                setGameQuestions(roundTwoQuestions)
-                break;
-            default:
-                setGameQuestions([])
-        }
-        // eslint-disable-next-line
-    }, [round])
 
     const mainGameArea = <>
                     <div align='center' style={ {color: 'white'} }>
@@ -84,4 +64,4 @@ const  mapStateToProps = state => ({
     isDone: state.questionDisplayModalControl.isDone
 })
 
-export default connect(mapStateToProps, { setGameQuestions, addRound, allButtonsClicked, showQuestionModel, roundQuestions  })(GameFrame);
+export default connect(mapStateToProps, { addRound, allButtonsClicked, showQuestionModel  })(GameFrame);

@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
 
-import { QandA, playerPoints, gameQuestions, gameScores, questionDisplayModalControl, startGame } from './gameState'
-import { getApiQuestions} from "./apiState";
+import { QandA, playerPoints, gameScores, questionDisplayModalControl, startGame } from './gameState'
+import { gameQuestions } from "./apiState";
 
 
 const rootReducers = combineReducers({
@@ -10,8 +10,7 @@ const rootReducers = combineReducers({
     playerPoints,
     gameQuestions,
     gameScores,
-    questionDisplayModalControl,
-    getApiQuestions
+    questionDisplayModalControl
 })
 
 export default rootReducers
