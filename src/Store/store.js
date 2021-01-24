@@ -6,13 +6,15 @@ const initialState = {};
 
 const middleware = [thunk];
 
+const composerEnhancers = ((process.env.NODE_ENV !== 'production' &&
+    typeof window !== 'undefined' &&
+    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) ||
+    compose)
+
 const store = createStore(
     rootReducers,
     initialState,
-    compose(
-        applyMiddleware(...middleware),
-        window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-    )
+    composerEnhancers(applyMiddleware(...middleware))
 );
 
 export default store;
