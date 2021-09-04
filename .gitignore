@@ -23,7 +23,7 @@ yarn-debug.log*
 yarn-error.log*
 
 frontend/.eslintcache
-trivia/config/credentials/*.key
-trivia/config/master.key
-trivia/config/database.yml
+config/credentials/*.key
+config/master.key
+config/database.yml
 .idea
