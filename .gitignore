@@ -9,7 +9,7 @@ frontend/node_modules
 /coverage
 
 # production
-/build
+frontend/build
 
 # misc
 .DS_Store
@@ -23,6 +23,7 @@ yarn-debug.log*
 yarn-error.log*
 
 frontend/.eslintcache
-trivia/config/**/*.key
-trivia/config/*.key
+trivia/config/credentials/*.key
+trivia/config/master.key
+trivia/config/database.yml
 .idea
